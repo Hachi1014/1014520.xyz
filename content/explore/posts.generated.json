@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "hermes-arch-linux-installation",
+    "title": "用 Hermes 指挥 Arch Linux 系统的安装",
+    "category": "系统安装",
+    "date": "2026-05-29",
+    "endDate": "2026-05-30",
+    "status": "已完成",
+    "minutes": 3,
+    "html": "<p>今天突发奇想，既然Archlinux是从0开始安装系统，那么假如我在系统里部署一个Agent，是不是只需要AI来帮我执行各种麻烦的安装过程，我只需要指挥它就好了？那么说干就干。</p>\n<p id=\"section-1\">第一步下载iso镜像文件<br>\n<a href=\"https://mirrors.aliyun.com/archlinux/iso/2026.05.01/\" rel=\"nofollow\" target=\"_blank\">archlinux-iso-2026.05.01安装包下载-开源镜像站-阿里云</a><br>\n文件名：archlinux-x86_64.iso</p>\n<p>用的idm下载，大概用了两分钟<br>\n<img src=\"/explore/assets/b7de8a449ccb8da175e9bbe7.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"989\" height=\"704\"></p>\n<p>初步设置<br>\n<img src=\"/explore/assets/4f3eb54bc9d254a4cf9fa419.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1286\" height=\"969\"><br>\n<img src=\"/explore/assets/0477517bd4c04b8f6940ab13.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1286\" height=\"969\"></p>\n<p>这是进来的第一个界面，真的是纯黑框<br>\n<img src=\"/explore/assets/57e400f60a433ecfabe2399d.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"847\" height=\"454\"></p>\n<p>首先来ping一下，看看连没连上网，然后就可以直接安装Hermes了。<br>\n<img src=\"/explore/assets/b70ee71fd20a5fc89f916e15.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"913\" height=\"691\"></p>\n<p>但是在虚拟机里我们没法粘贴指令，所以需要先用一下ssh连接到我们本地的终端</p>\n<p>先用ip addr show，获取一下ip<br>\n<img src=\"/explore/assets/5ee9fffa9c5171d828197067.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"851\" height=\"283\"></p>\n<p>接下来在自己的终端里输入ssh root@192.168.47.137<br>\n<img src=\"/explore/assets/bcbb823858e1c8c7b346ef7e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>等等，这里漏了一步，还没设置密码呢，我说ssh怎么连接不上<br>\n<img src=\"/explore/assets/e88e401c55478df6ed01f904.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"324\" height=\"101\"></p>\n<p>ok呀，现在就成功了，我可以直接在自己的终端里控制archlinux了<br>\n<img src=\"/explore/assets/477292108e0611fc1f7b2425.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>接下来启动代理，运行安装命令</p>\n<pre><code>curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash\n</code></pre>\n<p>能进入安装界面，说明咱们的想法已经基本得到验证了<br>\n<img src=\"/explore/assets/b55e7ff2f041cf6e8bce8148.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>坏了停止了，还需要我们手动安装git<br>\n<img src=\"/explore/assets/8656e05aab41acaedb42611e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"642\" height=\"184\"></p>\n<p>结果安装git还报错了，问了一下ai<br>\n<img src=\"/explore/assets/7e1d18bcecac2df52385dbea.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"1439\" height=\"885\"></p>\n<p>这下git安装成功了<br>\n<img src=\"/explore/assets/865a7a5c34e202a92bf16a52.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"923\"></p>\n<p>再次回到hermes的安装，遭到严重报错<br>\n<img src=\"/explore/assets/ce1adbe61a58fa5bf85f6a3b.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>发给ai之后，它告诉我磁盘空间满了<br>\n<img src=\"/explore/assets/d1daa815366df75735f132f5.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"1285\" height=\"859\"></p>\n<p>还真是，cowspace和 airootfs 都满了<br>\n<img src=\"/explore/assets/5f6ccd64fe9c79b3950aba89.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 16\" loading=\"lazy\" decoding=\"async\" width=\"1471\" height=\"605\"></p>\n<p>接下来扩容</p>\n<p>在系统启动的时候狂按e，会进入到grub界面<br>\n<img src=\"/explore/assets/0054505ecc7b017385f9f1fe.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 17\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\"></p>\n<p>然后点击tab键进行编辑<br>\n<img src=\"/explore/assets/0df4d17714340f9b484564ac.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 18\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\"></p>\n<p>按空格，补上下面这行<br>\ncow_spacesize=4G<br>\n然后按enter进入系统<br>\n<img src=\"/explore/assets/55824d4194aba0f5d772bf0f.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 19\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\"></p>\n<p>ai牛逼，扩容成功<br>\n<img src=\"/explore/assets/5b8b5af1cbd37985a3e5b2ef.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 20\" loading=\"lazy\" decoding=\"async\" width=\"708\" height=\"389\"></p>\n<p>继续ssh连接，然后再次安装hermes</p>\n<p>这时候我发现了一个奇怪的问题，我再次进入系统的时候，不仅passwd需要重新设置，我上次安装的git也没了，都需要再重新操作一遍，可恶。</p>\n<p>ok,重新鼓捣了一遍，猜猜我这次能成功吗？<br>\n<img src=\"/explore/assets/d8b2d801bb2c8558fd62e4cf.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 21\" loading=\"lazy\" decoding=\"async\" width=\"1683\" height=\"712\"></p>\n<p>对了，ai是这么解释原因的<br>\n<img src=\"/explore/assets/884fab0e13c28c23ac621cbc.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 22\" loading=\"lazy\" decoding=\"async\" width=\"1029\" height=\"589\"></p>\n<p>那么目前虽然没有出现什么报错，但是这个安装速度真的一言难尽<br>\n<img src=\"/explore/assets/d2c0a3230ee39c6a1d808364.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 23\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>忍不了，直接国内镜像</p>\n<pre><code>curl -fsSL https://res1.hermesagent.org.cn/install.sh | bash\n</code></pre>\n<p><img src=\"/explore/assets/2584a71231c48c713e1bd52e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 24\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>牛逼，直接几秒钟就安装完成了<br>\n<img src=\"/explore/assets/e9d67b954cf464b86b32fcd9.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 25\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>后面就是正常的安装过程了</p>\n<p>接上了一个小米的api<br>\n<img src=\"/explore/assets/4657a024dcab9e8b0401bbc3.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 26\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1408\"></p>\n<p>ok，安装成功<br>\n输入下面这个命令，可以重新加载当前 Shell 的配置文件</p>\n<pre><code>source ~/.zshrc\n</code></pre>\n<p>然后输入hermes命令，启动它。但是这里不知道为什么，我输完之后就卡住了。<br>\n<img src=\"/explore/assets/9ef3ca244c94fa31e03003e7.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 27\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>ok，问题再次解决，原来是因为我把代理的tun给关了，后台无法正常下载文件，把tun打开就可以正常下载了。<br>\n<img src=\"/explore/assets/7b21d2c061e6f18a52e8b7d2.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 28\" loading=\"lazy\" decoding=\"async\" width=\"1309\" height=\"1047\"></p>\n<p>下面是见证奇迹的时刻，金色传说啊！我终于成功了！<br>\n<img src=\"/explore/assets/c892e765719acfe7dd425f07.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 29\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1470\"></p>\n<p>现在我要让它介绍一下我的江山<br>\n<img src=\"/explore/assets/06281daf1d52444ad713d1be.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 30\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"4048\"></p>\n<p>爽！！！</p>\n<p>看哭了，为了新入新系统一定要失去你吗😭<br>\n<img src=\"/explore/assets/70a5662c8faa115f7e0eb438.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 31\" loading=\"lazy\" decoding=\"async\" width=\"1728\" height=\"568\"></p>\n<p>好在有解决办法！<br>\n<img src=\"/explore/assets/b2dc962a1cce940722c7812b.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 32\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"3880\"></p>\n<p>重启之后hermes还在，成功达成happy ending<br>\n<img src=\"/explore/assets/cf356f43659836501cd6924e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 33\" loading=\"lazy\" decoding=\"async\" width=\"1421\" height=\"896\"></p>\n<p>最后再补一张，由于每次遇到hermes敲不了的终端命令，需要我退出之后手动敲，敲完之后再回来之前的聊天对话框就不在了，需要hermes手动拉取之前的历史记录。然后这张图里主要是hermes帮我开了哪些荒：<br>\n<img src=\"/explore/assets/585e57fd116a941bafcf4733.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 34\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"5392\"></p>\n<p>至此，本次折腾圆满结束。</p>\n<p id=\"section-2\">补充：</p>\n<p>进入新系统的hermes并没有携带在live系统时候的记忆，不知道如果我要求的话，能不能添加进来。这个小米模型的配置就不是我手动操作了，是live环境里的hermes帮忙配好的，我用root用户直接输入hermes就正常启动了。<br>\n<img src=\"/explore/assets/f7ce533b0ab0c87cc6e288ff.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 35\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>root和user不共用一套hermes配置，所以我一开始用root能进入hermes，但用user就不可以。<br>\n<img src=\"/explore/assets/5eac5c93f5e69708986f4a23.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 36\" loading=\"lazy\" decoding=\"async\" width=\"2539\" height=\"1229\"></p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "第一步下载iso镜像文件"
+      },
+      {
+        "id": "section-2",
+        "text": "补充："
+      }
+    ]
+  },
+  {
+    "slug": "dual-boot-installation",
+    "title": "电脑双系统安装",
+    "category": "系统安装",
+    "date": "2026-05-17",
+    "endDate": "2026-07-03",
+    "status": "已完成",
+    "minutes": 2,
+    "html": "<p id=\"section-1\">2026/5/17</p>\n<p>为什么想折腾双系统呢？<br>\n主要是想用OpenClaw，但是不想让它在我的主系统上运行。可是虚拟机性能又太差，于是想到了双系统这个方案，其实更多的还是想满足自己折腾的欲望。</p>\n<p id=\"section-2\">第一步，制作安装系统U盘<br>\n<a href=\"https://rufus.ie/zh/\" rel=\"nofollow\" target=\"_blank\">Rufus - 轻松创建 USB 启动盘</a><br>\n详细补充：首先需要先准备一个空u盘(即使不是空u盘后续也会被强制格式后)，第二步下载目标系统的iso镜像，第三步用rufus这个工具把iso镜像写进u盘，至此u盘就被格式后，彻底变成了电脑系统的启动盘。</p>\n<p id=\"section-3\">第二步，存储分区</p>\n<p>遇到了第一大难题：我的e盘明明还有140个g，可是可压缩空间只有40g<br>\n<img src=\"/explore/assets/3bd6411c244ba82f90ec8036.webp\" alt=\"电脑双系统安装 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"1130\" height=\"895\"></p>\n<p>结果我随便一搜，卧槽了，居然有人和我有一模一样的问题<br>\n<img src=\"/explore/assets/7c8884fcc288bec9177f4fc0.webp\" alt=\"电脑双系统安装 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1760\" height=\"1324\"></p>\n<p>还有一篇更古老的18年的帖子！结果我仔细阅读之后发现，这个20年的帖子纯搬运的18年的帖子，只不过自己添了一张图。<br>\n<img src=\"/explore/assets/e6a3074eb0e3a1c697929966.webp\" alt=\"电脑双系统安装 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1720\" height=\"1325\"></p>\n<p>最后用尽全力，无法解决这个问题，气死我了。</p>\n<p>这里我又解决了一个误区：</p>\n<ul>\n<li>\n<p>这是右击状态栏<br>\n<img src=\"/explore/assets/385c68773741cc40281fb2b5.webp\" alt=\"电脑双系统安装 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"304\"></p>\n</li>\n<li>\n<p>这是右击win标<br>\n<img src=\"/explore/assets/ed0e79d8c6e751cdec01b05e.webp\" alt=\"电脑双系统安装 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"1771\" height=\"991\"></p>\n</li>\n</ul>\n<p>插入安装U盘之后，狂按F12进入BIOS模式，然后选择下面的Linpus lite进入系统安装界面。<br>\n<img src=\"/explore/assets/888fa4656c0c99a82ed559f3.jpg\" alt=\"电脑双系统安装 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>然后开始选择系统盘的安装位置了，这里用的是我之前从D盘和E盘里抠出来的存储<br>\n<img src=\"/explore/assets/a74b784a5596dd4e67020f2d.jpg\" alt=\"电脑双系统安装 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>跟随向导配置好信息之后重启就OK了。<br>\n<img src=\"/explore/assets/04d1aae0d2e98a0acee349cb.jpg\" alt=\"电脑双系统安装 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>刚进去之后，感觉界面的东西都特别小，然后把显示器设置里面的缩放调成了166%</p>\n<p>还有一个有意思的是，Linux启动应用还需要选择作为程序执行，不然无法正常启动<br>\n<img src=\"/explore/assets/8d3af42a3860812948f6c2ef.jpg\" alt=\"电脑双系统安装 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>Linux里面往U盘传文件必须手动点弹出，不然文件不能正常写入</p>\n<p>后面我发现，在Ubuntu和Windows系统的磁盘是共享的，并没有我想象中的隔离效果，那我折腾这么大半天还有什么意义呢？<br>\n除此之外还有一个痛点，现在每次打开电脑，默认进入选择系统界面，而只有单系统的情况下是直接进入但系统的。更过分的是，Ubuntu系统在选择界面的第一个，也就是说长时间不操作默认进入的是Ubuntu系统，可正常来说肯定是Windows用的多啊。</p>\n<p id=\"section-4\">补充：<br>\n1.一定要修改国内镜像源，不然速度是真慢，不知道为什么代理开TUN都不管用。<br>\n下面是开了之后的效果，不开是几十kb每秒。<br>\n<img src=\"/explore/assets/c3c4dcb608739c1904cebfec.webp\" alt=\"电脑双系统安装 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>2.Linux安装的过程很奇怪，需要用到指令。cd进一个文件夹之后，空打一个“cd”就能重新回到初始目录。<br>\n<img src=\"/explore/assets/99451baa8ae5429451f54ea8.webp\" alt=\"电脑双系统安装 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p id=\"section-5\">2026/7/3后续：<br>\n成功卸载ubuntu系统</p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "2026/5/17"
+      },
+      {
+        "id": "section-2",
+        "text": "第一步，制作安装系统U盘"
+      },
+      {
+        "id": "section-3",
+        "text": "第二步，存储分区"
+      },
+      {
+        "id": "section-4",
+        "text": "补充："
+      },
+      {
+        "id": "section-5",
+        "text": "2026/7/3后续："
+      }
+    ]
+  },
+  {
+    "slug": "openclaw-and-hermes",
+    "title": "OpenClaw & Hermes",
+    "category": "智能体实践",
+    "date": "2026-02-10",
+    "endDate": "2026-05-19",
+    "status": "已完成",
+    "minutes": 2,
+    "html": "<p id=\"section-1\">2026/2/10<br>\n虚拟机+Archlinux</p>\n<p id=\"section-2\">第一步安装 Node.js 22+</p>\n<pre><code>$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash\n$ source ~/.bashrc\n$ nvm install 22\n</code></pre>\n<p id=\"section-3\">第二步安装git</p>\n<pre><code>$ sudo pacman -S git\n</code></pre>\n<p id=\"section-4\">第三步安装Openclaw(==用海外节点加速，否则会安装失败==)</p>\n<pre><code>$ curl -fsSL https://openclaw.ai/install.sh | bash\n</code></pre>\n<p>跟着步骤一步步来就行，但是由于全是英文，我根本看不懂，也不知道该怎么选，稀里糊涂的就过来了<br>\n<img src=\"/explore/assets/d1ec98605c05d855421da7d2.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"2358\" height=\"1360\"></p>\n<p>这是今天的最终成果，整了半天，实在连接不上飞书<br>\n<img src=\"/explore/assets/d91481f532f4c078ceb3ad8f.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1280\" height=\"800\"></p>\n<p id=\"section-5\">2026/4/19——续<br>\nOpenclaw已经爆火这么久了，但是我迟迟没有体验，有两个原因吧：<br>\n1.它本身就不够成熟，属于是一个银样镴枪头，中看不中用<br>\n2.太费token了，我没钱养它</p>\n<p>现在龙虾的热度已经过去了，我再接着来折腾吧，这次我的目标是能跑起来就行</p>\n<p id=\"section-6\">2026/5/17——再续<br>\n上次忘了折腾了，今天势必拿下。看了罗福莉的访谈之后想安OpenClaw的欲望达到了顶峰。</p>\n<p>代理也开了，就是不知道为什么，用官网上的指令下载总是卡住<br>\n<img src=\"/explore/assets/0ba88e7ae63881598b82d97f.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>最后用的pnpm终于成功了<br>\n<img src=\"/explore/assets/0a5dd9c06cf2947b619f4b02.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>久违了，控制面板<br>\n<img src=\"/explore/assets/4089d99d38b80de9d71d2af0.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>配置好Deepseek的API之后，开启了我和龙虾的第一句话<br>\n<img src=\"/explore/assets/371add45ce043c20c7bcc47b.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>接着连接QQ<br>\n<img src=\"/explore/assets/58de83ad798d8a8e7415e702.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>成功配置<br>\n<img src=\"/explore/assets/efd5fdb6421db64f8386f681.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>第一个报错，解决办法是重新配置了一下config文件<br>\n<img src=\"/explore/assets/6ed4dc0ca1e4fdd239d3849c.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/1d83ce0bcbb1751e755710d1.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/ad9cda49a022f250a8f11111.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/927baf29efa03aa2c6ed0f64.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/0231fc832cf9c185ea83a8f1.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/d42888f6db25ce0f4c1c155b.jpg\" alt=\"OpenClaw &amp; Hermes · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"3660\" height=\"2712\"></p>\n<p>总结一下使用感受：鸡肋，没有实际应用场景</p>\n<p id=\"section-7\">隔天趁着热乎劲，又来折腾一下Hermes：<br>\n这次我直接用的官方安装命令，之前一直觉得太慢，后面我发现，只要开TUN就行了。<br>\n依旧配置Deepseek的API，10块钱的余额我都用两年多了都没用完。<br>\n<img src=\"/explore/assets/c1a6429b9808fa76a4c5d765.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>这里安装完之后，直接输入hermes命令还没有反应。<br>\n需要用下面这个代码重新加载shell：<code>source ~/.bashrc</code><br>\n<img src=\"/explore/assets/fb41b18d290d421e9c295402.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 16\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>OK呀，也是成功进入Hermes了。<br>\n<img src=\"/explore/assets/9d005904c8550e58af91c0bc.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 17\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>在配置qq bot的时候我遇到了一个问题，就是每次配置的时候总是跳过，我明明记得我是选中了qq bot的，结果我问了ai发现，还需要用空格进行选中的。ai真的越来越聪明了。<br>\n<img src=\"/explore/assets/87c14817056ea873c250a362.jpg\" alt=\"OpenClaw &amp; Hermes · 步骤截图 18\" loading=\"lazy\" decoding=\"async\" width=\"3660\" height=\"2712\"></p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "2026/2/10"
+      },
+      {
+        "id": "section-2",
+        "text": "第一步安装 Node.js 22+"
+      },
+      {
+        "id": "section-3",
+        "text": "第二步安装git"
+      },
+      {
+        "id": "section-4",
+        "text": "第三步安装Openclaw(用海外节点加速，否则会安装失败)"
+      },
+      {
+        "id": "section-5",
+        "text": "2026/4/19——续"
+      },
+      {
+        "id": "section-6",
+        "text": "2026/5/17——再续"
+      },
+      {
+        "id": "section-7",
+        "text": "隔天趁着热乎劲，又来折腾一下Hermes："
+      }
+    ]
+  }
+]

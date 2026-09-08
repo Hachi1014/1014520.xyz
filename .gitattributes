@@ -1,0 +1,3 @@
+content/blog/media-parts/*.bin binary
+content/blog/*.md -text
+content/blog/README.md text eol=lf

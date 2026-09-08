@@ -1,0 +1,37 @@
+{
+  "a-students-awakening": {
+    "publishedAt": "2026-03-07",
+    "endBeforeHeading": "七、为什么我要做公众号"
+  },
+  "essential-windows-apps": {
+    "publishedAt": "2026-03-09"
+  },
+  "github-guide": {
+    "publishedAt": "2026-03-14"
+  },
+  "save-original-images": {
+    "publishedAt": "2026-03-11"
+  },
+  "photoshop-basics": {
+    "publishedAt": "2026-03-24"
+  },
+  "tampermonkey-guide": {
+    "publishedAt": "2026-03-13"
+  },
+  "network-basics": {
+    "publishedAt": "2026-04-08",
+    "notice": "仅作网络知识科普，无不良引导。"
+  },
+  "learning-in-the-ai-era": {
+    "publishedAt": "2026-05-15",
+    "replacements": [
+      [
+        "**只学AI**",
+        "**只学人工智能（Artificial Intelligence，AI）**"
+      ]
+    ]
+  },
+  "claude-code-guide": {
+    "publishedAt": "2026-04-15"
+  }
+}

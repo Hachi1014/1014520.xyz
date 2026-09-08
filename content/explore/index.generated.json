@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "hermes-arch-linux-installation",
+    "title": "用 Hermes 指挥 Arch Linux 系统的安装",
+    "category": "系统安装",
+    "date": "2026-05-29",
+    "endDate": "2026-05-30",
+    "status": "已完成",
+    "minutes": 3
+  },
+  {
+    "slug": "dual-boot-installation",
+    "title": "电脑双系统安装",
+    "category": "系统安装",
+    "date": "2026-05-17",
+    "endDate": "2026-07-03",
+    "status": "已完成",
+    "minutes": 2
+  },
+  {
+    "slug": "openclaw-and-hermes",
+    "title": "OpenClaw & Hermes",
+    "category": "智能体实践",
+    "date": "2026-02-10",
+    "endDate": "2026-05-19",
+    "status": "已完成",
+    "minutes": 2
+  }
+]
