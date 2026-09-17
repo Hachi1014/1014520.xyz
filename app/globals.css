@@ -1,17 +1,16 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
+@import './control-states.css';
 @custom-variant dark (&:is(.dark *));
 @theme inline { --color-background: var(--background); --color-foreground: var(--foreground); }
 @font-face { font-family: 'Personal Sans'; src: url('/assets/dm-sans-latin-variable-CwMReqGs.woff2') format('woff2'); font-weight: 100 1000; font-display: swap; }
 @font-face { font-family: 'Boyang Display'; src: url('/fonts/boyang-display.woff') format('woff'); font-weight: 400; font-style: normal; font-display: swap; }
 :root, .dark {
- color-scheme: dark;
+ color-scheme: only dark;
  --background: #0a0a0a; --foreground: #eeeeee; --muted: #a1a1a1; --line: #303030; --panel: #111;
  --veil: #0a0a0a; --accent: #eeeeee; --dot: #999; --fog: #555; --primary: #eee; --input: #333; --ring: #aaa;
 }
 :root[data-theme='light'] {
- color-scheme: light;
+ color-scheme: only light;
  --background: #f3f7fd; --foreground: #134ab6; --muted: #4e6891; --line: #cfdbef; --panel: #eaf1fc;
  --veil: #f3f7fd; --accent: #1357eb; --dot: #3475ec; --fog: #9dbaf0; --primary: #1357eb; --input: #b2c8ed; --ring: #1357eb;
 }
@@ -44,8 +43,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 .theme-control { display: flex; gap: 10px; align-items: center; cursor: pointer; min-height: 44px; }
 .theme-switch[data-slot='switch'] { width: 38px; height: 22px; padding: 2px; background: var(--line); border: 1px solid var(--muted); }
-.theme-switch [data-slot='switch-thumb'] { width: 16px; height: 16px; background: var(--foreground); }
-.theme-switch[data-checked] { background: #d2e0fa; }
+/* Derive the circle from the inner track height so zoom-rounded borders keep equal gaps. */
+.theme-switch [data-slot='switch-thumb'] { position: absolute; top: 2px; left: 2px; width: auto; height: calc(100% - 4px); aspect-ratio: 1; background: var(--foreground); translate: 0; }
+/* The head script resolves the theme before paint; hydration must not move the switch. */
+:root[data-theme='dark'] .theme-switch [data-slot='switch-thumb'] { translate: 0; }
+:root[data-theme='light'] .theme-switch [data-slot='switch-thumb'] { translate: 16px 0; }
+:root[data-theme='light'] .theme-switch[data-slot='switch'] { background: #d2e0fa; }
 .theme-caption { font-size: 16px; color: var(--muted); margin-left: 4px; }
 .hero { position: relative; min-height: max(760px, 100svh); display: flex; align-items: center; isolation: isolate; }
 .hero-art { position: absolute; inset: 0; z-index: -3; }

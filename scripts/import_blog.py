@@ -1,5 +1,6 @@
 from pathlib import Path
-import sys, re, json, hashlib, shutil, math, urllib.parse, argparse
+from reading_time import estimate_minutes
+import sys, re, json, hashlib, shutil, urllib.parse, argparse
 from markdown_it import MarkdownIt
 import bleach
 from PIL import Image
@@ -77,9 +78,7 @@ for prefix,slug,category in selection:
     if cover:
         with Image.open(root/'public'/cover['src'].lstrip('/')) as im:
             im=im.convert('RGB');im.thumbnail((720,480));thumb='/blog/assets/'+slug+'-cover.webp';im.save(root/'public'/thumb.lstrip('/'),'WEBP',quality=87)
-    plain=re.sub(r'!\[[^\]]*\]\([^)]*\)','',raw)
-    word_count=len(re.findall(r'[\u4e00-\u9fff]|[A-Za-z0-9]+',plain))
-    posts.append({'slug':slug,'title':file.stem,'category':category,'minutes':max(1,math.ceil(word_count/450)),'cover':cover,'thumbnail':thumb,'html':html,'toc':toc,'publishedAt':edits.get('publishedAt')})
+    posts.append({'slug':slug,'title':file.stem,'category':category,'minutes':estimate_minutes(html, cover),'cover':cover,'thumbnail':thumb,'html':html,'toc':toc,'publishedAt':edits.get('publishedAt')})
     manifest.append({'slug':slug,'sourceFile':file.name,'sourceHash':hashlib.sha256(file.read_bytes()).hexdigest(),'imageReferences':len(images)})
 order={item[1]:i for i,item in enumerate(selection)}
 posts.sort(key=lambda p:order[p['slug']])

@@ -7,6 +7,13 @@
     "date": "2026-09-05"
   },
   {
+    "title": "苦难、环境与人格魅力",
+    "category": "成长",
+    "date": "2026-08-29",
+    "minutes": 2,
+    "id": "diary-196"
+  },
+  {
     "id": "why-pay-for-steam-games",
     "category": "消费",
     "title": "为什么使用Steam之后开始愿意买正版游戏",
@@ -49,6 +56,13 @@
     "date": "2026-07-26"
   },
   {
+    "title": "兴趣与关系中的接受度",
+    "category": "自我探索",
+    "date": "2026-07-24",
+    "minutes": 1,
+    "id": "diary-187"
+  },
+  {
     "id": "college-and-employment",
     "category": "教育",
     "title": "大部分人上大学是为了就业，为什么专科分数线远低于本科？",
@@ -77,11 +91,32 @@
     "date": "2026-07-14"
   },
   {
+    "title": "从银行理财到科技基金的投资复盘",
+    "category": "投资",
+    "date": "2026-07-13",
+    "minutes": 2,
+    "id": "diary-179"
+  },
+  {
     "id": "credentials-and-scarcity",
     "category": "教育",
     "title": "学历贬值与个人稀缺性",
     "minutes": 3,
     "date": "2026-07-04"
+  },
+  {
+    "title": "追涨科技主动基金后的复盘",
+    "category": "投资",
+    "date": "2026-07-03",
+    "minutes": 2,
+    "id": "diary-171"
+  },
+  {
+    "title": "为什么我看好Anthropic专注代码的路线",
+    "category": "技术观察",
+    "date": "2026-06-12",
+    "minutes": 1,
+    "id": "diary-157"
   },
   {
     "id": "invest-in-environment",
@@ -91,11 +126,46 @@
     "date": "2026-06-03"
   },
   {
+    "title": "AI时代，继续提高自己、体验生活",
+    "category": "成长",
+    "date": "2026-05-28",
+    "minutes": 1,
+    "id": "diary-148"
+  },
+  {
+    "title": "学习是为了融入人类社会",
+    "category": "学习",
+    "date": "2026-05-26",
+    "minutes": 1,
+    "id": "diary-146"
+  },
+  {
+    "title": "用简单的AI工具部署复杂的AI工具",
+    "category": "技术观察",
+    "date": "2026-05-25",
+    "minutes": 1,
+    "id": "diary-145"
+  },
+  {
+    "title": "蛙跳理论与狗熊理论",
+    "category": "学习",
+    "date": "2026-05-21",
+    "minutes": 1,
+    "id": "diary-140"
+  },
+  {
     "id": "learning-beyond-ai-tools",
     "category": "学习",
     "title": "AI时代反而没必要只追着学AI",
     "minutes": 1,
     "date": "2026-05-14"
+  },
+  {
+    "title": "外卖小哥买奥迪A6，是对是错",
+    "category": "消费",
+    "date": "2026-05-13",
+    "minutes": 1,
+    "id": "diary-136"
   },
   {
     "id": "after-saving-money",
@@ -112,11 +182,95 @@
     "date": "2026-05-08"
   },
   {
+    "title": "AI发展速度与资本流向",
+    "category": "技术观察",
+    "date": "2026-05-08",
+    "minutes": 1,
+    "id": "diary-133"
+  },
+  {
+    "title": "金融投资与智力复利",
+    "category": "投资",
+    "date": "2026-05-07",
+    "minutes": 1,
+    "id": "diary-132"
+  },
+  {
     "id": "every-choice-is-investment",
     "category": "成长",
     "title": "你人生的每一个选择都是在投资，不止金融",
     "minutes": 3,
     "date": "2026-04-18"
+  },
+  {
+    "title": "敢于承担风险，也需要知识和实践",
+    "category": "投资",
+    "date": "2026-04-13",
+    "minutes": 2,
+    "id": "diary-110"
+  },
+  {
+    "title": "新模型发布后，对未来生活的一次畅想",
+    "category": "技术观察",
+    "date": "2026-04-08",
+    "minutes": 1,
+    "id": "diary-105"
+  },
+  {
+    "title": "过度珍惜也是一种浪费",
+    "category": "消费",
+    "date": "2026-04-08",
+    "minutes": 1,
+    "id": "diary-107"
+  },
+  {
+    "title": "用正负数思考人生体验的一则随想",
+    "category": "生活",
+    "date": "2026-03-29",
+    "minutes": 1,
+    "id": "diary-096"
+  },
+  {
+    "title": "期待技术进步，也要照顾好自己的身体",
+    "category": "生活",
+    "date": "2026-03-23",
+    "minutes": 1,
+    "id": "diary-090-2"
+  },
+  {
+    "title": "读书留下的痕迹与多变量思维",
+    "category": "学习",
+    "date": "2026-03-06",
+    "minutes": 1,
+    "id": "diary-208"
+  },
+  {
+    "title": "年轻时，先积累人力资本",
+    "category": "投资",
+    "date": "2026-03-04",
+    "minutes": 1,
+    "id": "diary-075-2"
+  },
+  {
+    "title": "年轻人的时间与努力的觉悟",
+    "category": "成长",
+    "date": "2026-03-02",
+    "minutes": 4,
+    "id": "diary-074"
+  },
+  {
+    "title": "工作之外，如何认识自己的经验价值",
+    "category": "工作",
+    "date": "2026-03-01",
+    "minutes": 1,
+    "id": "diary-073"
+  },
+  {
+    "title": "从ETF概念理解如何构建知识网",
+    "category": "学习",
+    "date": "2026-02-28",
+    "minutes": 1,
+    "id": "diary-072"
   },
   {
     "id": "meaning-of-saving",
@@ -131,5 +285,124 @@
     "title": "每个人都有自己擅长的爱人方式",
     "minutes": 2,
     "date": "2026-02-18"
+  },
+  {
+    "title": "技术门槛、稀缺性与个人价值",
+    "category": "成长",
+    "date": "2026-02-07",
+    "minutes": 1,
+    "id": "diary-064"
+  },
+  {
+    "title": "从填鸭式教育到自主学习",
+    "category": "教育",
+    "date": "2025-12-31",
+    "minutes": 4,
+    "id": "diary-056"
+  },
+  {
+    "title": "对增重、减重与身体平衡的理解",
+    "category": "生活",
+    "date": "2025-10-10",
+    "minutes": 1,
+    "id": "diary-051"
+  },
+  {
+    "title": "线上平台的权益维护经历",
+    "category": "消费",
+    "date": "2025-09-02",
+    "minutes": 1,
+    "id": "diary-049"
+  },
+  {
+    "title": "为什么不愿意再从头练一个游戏账号",
+    "category": "自我探索",
+    "date": "2025-07-17",
+    "minutes": 1,
+    "id": "diary-047"
+  },
+  {
+    "title": "我为什么开始质疑中药的疗效证据",
+    "category": "生活",
+    "date": "2025-05-20",
+    "minutes": 3,
+    "id": "diary-041"
+  },
+  {
+    "title": "人生是一场代际接力吗",
+    "category": "生活",
+    "date": "2025-05-16",
+    "minutes": 1,
+    "id": "diary-039"
+  },
+  {
+    "title": "农村家庭并非不体面",
+    "category": "生活",
+    "date": "2025-04-28",
+    "minutes": 2,
+    "id": "diary-037"
+  },
+  {
+    "title": "把注意力放回自己的需求",
+    "category": "自我探索",
+    "date": "2025-04-25",
+    "minutes": 1,
+    "id": "diary-036"
+  },
+  {
+    "title": "天然钻石、撕拉片与消费叙事",
+    "category": "消费",
+    "date": "2025-02-18",
+    "minutes": 1,
+    "id": "diary-030"
+  },
+  {
+    "title": "关于死亡、生命与体验的思考",
+    "category": "生活",
+    "date": "2024-12-12",
+    "minutes": 2,
+    "id": "diary-026"
+  },
+  {
+    "title": "懂得越多，为什么胆子越小",
+    "category": "生活",
+    "date": "2024-08-11",
+    "minutes": 1,
+    "id": "diary-024"
+  },
+  {
+    "title": "AI修图工具的可控性与便捷度",
+    "category": "技术观察",
+    "date": "2024-06-14",
+    "minutes": 2,
+    "id": "diary-021"
+  },
+  {
+    "title": "读书能让人更成熟吗",
+    "category": "成长",
+    "date": "2024-04-17",
+    "minutes": 1,
+    "id": "diary-018"
+  },
+  {
+    "title": "关于马斯克与技术投入的一些看法",
+    "category": "技术观察",
+    "date": "2024-02-13",
+    "minutes": 1,
+    "id": "diary-015"
+  },
+  {
+    "title": "结果倒推法：不必反复后悔过去的选择",
+    "category": "自我探索",
+    "date": "2023-10-31",
+    "minutes": 1,
+    "id": "diary-009-2"
+  },
+  {
+    "title": "心心念念的东西，未必如想象中美好",
+    "category": "消费",
+    "date": "2023-07-18",
+    "minutes": 1,
+    "id": "diary-002"
   }
 ]

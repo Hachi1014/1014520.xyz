@@ -1,0 +1,14 @@
+{
+  "article": "xyz-domain-purchase",
+  "removedFinalSentence": true,
+  "textDomain": "520****.xyz",
+  "maskedDomainOccurrences": 12,
+  "imagesWithAdditionalMasks": 7,
+  "articleImagesRetained": 12,
+  "otherArticlesUnchanged": 10,
+  "originalKnowledgeBaseFilesUnchanged": 120,
+  "pixelsVerified": true,
+  "finalImageOcrReviewed": 12,
+  "obsoleteAssetAndChunkFilesMovedOutOfSite": 40,
+  "deployed": false
+}

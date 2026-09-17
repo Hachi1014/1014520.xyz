@@ -1,0 +1,20 @@
+{
+  "importedArticles": 8,
+  "totalArticles": 11,
+  "importedImageReferences": 112,
+  "redactedImages": 27,
+  "redactedRegions": 106,
+  "sourceFilesUnchanged": 120,
+  "priorArticlesUnchanged": 3,
+  "prosePreservedExceptApprovedRedactions": true,
+  "allImagePixelsVerified": true,
+  "mediaChunksVerified": 176,
+  "metadataChecked": 112,
+  "finalRedactedImageOcrReviewed": 27,
+  "buildPassed": true,
+  "checkPassed": true,
+  "deployed": false,
+  "articleRoutesVerified": 8,
+  "uniqueNewImageResponsesVerified": 111,
+  "sourceFinalHashCheckPassed": true
+}

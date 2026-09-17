@@ -1,0 +1,551 @@
+[
+  {
+    "number": 2,
+    "originalPreview": "有时候你心心念念的东西并不一定有你想象中的那么好",
+    "title": "心心念念的东西，未必如想象中美好",
+    "date": "2023-07-18",
+    "section": "thoughts",
+    "slug": "diary-002",
+    "media": 0
+  },
+  {
+    "number": 3,
+    "originalPreview": "一直把这游戏当成一个收集养成游戏，但今天突然发现也需要思考博弈。简单复盘一下，这个叫八神的我和他打了两次，第一次因为不知道他先攻…",
+    "title": "第一次认真复盘游戏竞技场",
+    "date": "2023-08-14",
+    "section": "daily",
+    "slug": "diary-003",
+    "media": 2
+  },
+  {
+    "number": 6,
+    "originalPreview": "昨日总结：首次尝试150km对我来说确实是个较大的突破，因为之前最多才60km。一开始我以为我到学校一定会筋疲力竭，于是一开始选…",
+    "title": "第一次骑行150公里",
+    "date": "2023-10-07",
+    "section": "daily",
+    "slug": "diary-006",
+    "media": 1
+  },
+  {
+    "number": 8,
+    "originalPreview": "春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节。",
+    "title": "若无闲事挂心头",
+    "date": "2023-10-26",
+    "section": "daily",
+    "slug": "diary-008-2",
+    "media": 0
+  },
+  {
+    "number": 9,
+    "originalPreview": "结果倒推法：有些东西现在不存在，不要后悔当初的决断，它不存在有它不存在的理由。这个不存在的东西现在是以抽象的概念存在你的脑海里，…",
+    "title": "结果倒推法：不必反复后悔过去的选择",
+    "date": "2023-10-31",
+    "section": "thoughts",
+    "slug": "diary-009-2",
+    "media": 0
+  },
+  {
+    "number": 12,
+    "originalPreview": "我曾经最不屑一顾的魔棒工具，居然起到了意想不到的结果，我深刻意识到了理解一个工具的工作原理的重要性，果然工具没有最好用的，只有针…",
+    "title": "用Photoshop魔棒工具处理阴影",
+    "date": "2024-01-30",
+    "section": "explore",
+    "slug": "diary-012",
+    "media": 4
+  },
+  {
+    "number": 15,
+    "originalPreview": "关于马斯克我的一些看法：",
+    "title": "关于马斯克与技术投入的一些看法",
+    "date": "2024-02-13",
+    "section": "thoughts",
+    "slug": "diary-015",
+    "media": 0
+  },
+  {
+    "number": 18,
+    "originalPreview": "刚才突然想到了一个问题，既然成年后，一个人的三观和性格基本上已经定型了，那倘若一个人从小就开始博览群书，强大和丰富自己的精神世界…",
+    "title": "读书能让人更成熟吗",
+    "date": "2024-04-17",
+    "section": "thoughts",
+    "slug": "diary-018",
+    "media": 1
+  },
+  {
+    "number": 21,
+    "originalPreview": "关于AIGC（ai generate content）消除的一些想法：ai消除无疑是照片处理的一个重要工具，而由于各个公司推出的…",
+    "title": "AI修图工具的可控性与便捷度",
+    "date": "2024-06-14",
+    "section": "thoughts",
+    "slug": "diary-021",
+    "media": 0
+  },
+  {
+    "number": 24,
+    "originalPreview": "越大胆子越小了，随着身体慢慢长大，一些坏习惯对身体的伤害已经显露出来了，你健康的时候可以很任性去做任何事，可一旦你的健康开始走下…",
+    "title": "懂得越多，为什么胆子越小",
+    "date": "2024-08-11",
+    "section": "thoughts",
+    "slug": "diary-024",
+    "media": 0
+  },
+  {
+    "number": 26,
+    "originalPreview": "曾几何时，我看见关于有人意外身亡的新闻会感到十分惋惜，开始害怕自己也会偶然遭遇不测，我很怕下一个死的人就是我。不过现在我的看法改…",
+    "title": "关于死亡、生命与体验的思考",
+    "date": "2024-12-12",
+    "section": "thoughts",
+    "slug": "diary-026",
+    "media": 0
+  },
+  {
+    "number": 28,
+    "originalPreview": "海龟汤好好玩😋 · はち：我有精神病",
+    "title": "一次海龟汤推理记录",
+    "date": "2025-02-07",
+    "section": "daily",
+    "slug": "diary-028",
+    "media": 1
+  },
+  {
+    "number": 30,
+    "originalPreview": "“当一个人的智商匹配不上他的财富时，多余部分会以各种形式流回市场。”",
+    "title": "天然钻石、撕拉片与消费叙事",
+    "date": "2025-02-18",
+    "section": "thoughts",
+    "slug": "diary-030",
+    "media": 0
+  },
+  {
+    "number": 31,
+    "originalPreview": "博客进度： · 首先通过网络上学习，明白了搭建博客首先需要一个框架，主流框架有hexo、vuepress、notion next…",
+    "title": "第一次搭建并部署个人博客",
+    "date": "2025-02-28",
+    "section": "explore",
+    "slug": "diary-031",
+    "media": 2
+  },
+  {
+    "number": 36,
+    "originalPreview": "“我发现心理状态健康的人，有相当高的此率对他人不感兴趣”。他们的行为更多受真实的自我需求影响，而不是外部期待。他们更关注优于过去…",
+    "title": "把注意力放回自己的需求",
+    "date": "2025-04-25",
+    "section": "thoughts",
+    "slug": "diary-036",
+    "media": 0
+  },
+  {
+    "number": 37,
+    "originalPreview": "农村家庭并非不体面，不要让虚荣蒙蔽了双眼：",
+    "title": "农村家庭并非不体面",
+    "date": "2025-04-28",
+    "section": "thoughts",
+    "slug": "diary-037",
+    "media": 0
+  },
+  {
+    "number": 39,
+    "originalPreview": "“有没可能人生是接力赛，有人的爷爷在战场上枪林弹雨，你的爷爷躲后方贪生怕死，最后人家爷爷退休金六千，子女接班，你父母家里种地，你…",
+    "title": "人生是一场代际接力吗",
+    "date": "2025-05-16",
+    "section": "thoughts",
+    "slug": "diary-039",
+    "media": 0
+  },
+  {
+    "number": 41,
+    "originalPreview": "怎么说呢，真的是认知决定一切。以前我也不懂，总觉得中医既然能传承至今，一定有它的本事，可是随着我了解的越多我才越发现，这现在的中…",
+    "title": "我为什么开始质疑中药的疗效证据",
+    "date": "2025-05-20",
+    "section": "thoughts",
+    "slug": "diary-041",
+    "media": 0
+  },
+  {
+    "number": 42,
+    "originalPreview": "我质疑中药果然没错，今天晚上突然一直咳嗽（md这个傻逼病，从上周四开始嗓子疼，然后过两天开始鼻炎，超绝鼻腔共鸣，一直流鼻涕，又过…",
+    "title": "咳嗽时查了一下甘草片的成分",
+    "date": "2025-05-21",
+    "section": "daily",
+    "slug": "diary-042",
+    "media": 0
+  },
+  {
+    "number": 44,
+    "originalPreview": "上课想写作业发现没带纸，于是我花两毛钱打印了一张空白的纸",
+    "title": "花两毛钱打印了一张白纸",
+    "date": "2025-06-03",
+    "section": "daily",
+    "slug": "diary-044",
+    "media": 2
+  },
+  {
+    "number": 47,
+    "originalPreview": "现在看见之前大大小小的王者号，开各种区，有时仅仅是为了玩一个英雄，但是因为大号攒不够金币，所以才开的新区。可是现在的我，你再让我…",
+    "title": "为什么不愿意再从头练一个游戏账号",
+    "date": "2025-07-17",
+    "section": "thoughts",
+    "slug": "diary-047",
+    "media": 0
+  },
+  {
+    "number": 49,
+    "originalPreview": "有这么一些人，性格比较唯唯诺诺，与世不争，遇到一些小亏自己就和自己劝和解了，某些平台正是利用了他们这一心理，挣到了很多不义之财；…",
+    "title": "线上平台的权益维护经历",
+    "date": "2025-09-02",
+    "section": "thoughts",
+    "slug": "diary-049",
+    "media": 0
+  },
+  {
+    "number": 51,
+    "originalPreview": "减重或增重本质上就是在和基因做对抗，有的人天生就壮，吃的就多；有的人天生就瘦，吃的也少。基因决定了一个人的骨架大小和肌肉含量，然…",
+    "title": "对增重、减重与身体平衡的理解",
+    "date": "2025-10-10",
+    "section": "thoughts",
+    "slug": "diary-051",
+    "media": 0
+  },
+  {
+    "number": 53,
+    "originalPreview": "某天早八破防瞬间 · 这几天蓝色大风预警，今天气温骤降至零下。去教室的路上吹的我自行车寸步难行，我的手和耳朵被冻得即将失去知觉，…",
+    "title": "一次被大风和网速折腾的早八",
+    "date": "2025-11-17",
+    "section": "daily",
+    "slug": "diary-053",
+    "media": 2
+  },
+  {
+    "number": 55,
+    "originalPreview": "刚才去小吃街买完吃的回来，走到公寓楼下时，前面有位男生刚好刷卡进门。门已经快要合上了，只剩下四分之一左右的距离。我离门还有几步远…",
+    "title": "有人帮我挡住了快合上的门",
+    "date": "2025-12-05",
+    "section": "daily",
+    "slug": "diary-055",
+    "media": 0
+  },
+  {
+    "number": 56,
+    "originalPreview": "填鸭式教育不适用于现代社会",
+    "title": "从填鸭式教育到自主学习",
+    "date": "2025-12-31",
+    "section": "thoughts",
+    "slug": "diary-056",
+    "media": 1
+  },
+  {
+    "number": 61,
+    "originalPreview": "二手苹果手机的一些坑：",
+    "title": "二手iPhone的选购记录与到手体验",
+    "date": "2026-01-21",
+    "section": "explore",
+    "slug": "diary-061",
+    "media": 2
+  },
+  {
+    "number": 64,
+    "originalPreview": "从第一性原理出发，大脑厌恶低正反馈的事情，导致学习成本较高，导致技术存在门槛，所以门槛越高的技术越稀缺。",
+    "title": "技术门槛、稀缺性与个人价值",
+    "date": "2026-02-07",
+    "section": "thoughts",
+    "slug": "diary-064",
+    "media": 0
+  },
+  {
+    "number": 66,
+    "originalPreview": "刚才清理小号朋友圈的时候误删了一条，我来复述一下内个评论的意思吧，那个人说：安宫牛黄丸最重要的一味要犀牛角已经没有了，然后底下有…",
+    "title": "一条关于安宫牛黄丸的评论",
+    "date": "2026-02-11",
+    "section": "daily",
+    "slug": "diary-066",
+    "media": 0
+  },
+  {
+    "number": 68,
+    "originalPreview": "二零二六年春节大厂送钱：",
+    "title": "2026年春节各家AI应用红包体验",
+    "date": "2026-02-17",
+    "section": "daily",
+    "slug": "diary-068",
+    "media": 7
+  },
+  {
+    "number": 72,
+    "originalPreview": "当你对一个概念模糊的时候，最大的原因是因为你的知识没有串起来，所有知识都应该是环环相扣的，你必须从第一性原理出发，从这个知识最本…",
+    "title": "从ETF概念理解如何构建知识网",
+    "date": "2026-02-28",
+    "section": "thoughts",
+    "slug": "diary-072",
+    "media": 0
+  },
+  {
+    "number": 73,
+    "originalPreview": "被优化了很焦虑？ · 在评论区看见一个英语专八，干外贸的大姐被优化了，现在天天焦虑该怎么找工作。",
+    "title": "工作之外，如何认识自己的经验价值",
+    "date": "2026-03-01",
+    "section": "thoughts",
+    "slug": "diary-073",
+    "media": 0
+  },
+  {
+    "number": 74,
+    "originalPreview": "年轻人的时间很重要，但是为什么很少有人会珍惜？",
+    "title": "年轻人的时间与努力的觉悟",
+    "date": "2026-03-02",
+    "section": "thoughts",
+    "slug": "diary-074",
+    "media": 0
+  },
+  {
+    "number": 75,
+    "originalPreview": "年轻时，人力资本增值远胜金融资本增值",
+    "title": "年轻时，先积累人力资本",
+    "date": "2026-03-04",
+    "section": "thoughts",
+    "slug": "diary-075-2",
+    "media": 0
+  },
+  {
+    "number": 90,
+    "originalPreview": "照目前科技的进步速度，我觉得比起累死累活的卷，不如抓紧锻炼身体，努力提高身体健康，只要ai和具身智能再来几个范式级别的创新，人类…",
+    "title": "期待技术进步，也要照顾好自己的身体",
+    "date": "2026-03-23",
+    "section": "thoughts",
+    "slug": "diary-090-2",
+    "media": 0
+  },
+  {
+    "number": 96,
+    "originalPreview": "或许很多人对死亡的认知都太狭隘了。假如把人生中开心的时间算作正数，不开心的时间算作负数，那最后加起来它如果是一个负数，那是不是说…",
+    "title": "用正负数思考人生体验的一则随想",
+    "date": "2026-03-29",
+    "section": "thoughts",
+    "slug": "diary-096",
+    "media": 0
+  },
+  {
+    "number": 103,
+    "originalPreview": "骑车首先要学会刹车 · 刹车是对自己和别人的一个保护。你必须对自己的刹车的制动距离有一个非常精确的把控，然后你要随时做好捏刹车的…",
+    "title": "骑车先学会刹车：车感与路感",
+    "date": "2026-04-05",
+    "section": "explore",
+    "slug": "diary-103",
+    "media": 0
+  },
+  {
+    "number": 105,
+    "originalPreview": "未来已来，当下最重要的事情是好好活着",
+    "title": "新模型发布后，对未来生活的一次畅想",
+    "date": "2026-04-08",
+    "section": "thoughts",
+    "slug": "diary-105",
+    "media": 0
+  },
+  {
+    "number": 107,
+    "originalPreview": "珍惜也是一种浪费 · 对待任何放久了会坏的东西，不管它有多贵，你就当它第二天就要过期了，使劲往里造，一旦你对它产生了珍惜的心态，…",
+    "title": "过度珍惜也是一种浪费",
+    "date": "2026-04-08",
+    "section": "thoughts",
+    "slug": "diary-107",
+    "media": 0
+  },
+  {
+    "number": 110,
+    "originalPreview": "敢于承担风险是一种能力",
+    "title": "敢于承担风险，也需要知识和实践",
+    "date": "2026-04-13",
+    "section": "thoughts",
+    "slug": "diary-110",
+    "media": 0
+  },
+  {
+    "number": 132,
+    "originalPreview": "简单聊一下投资吧 · 我目前主要进行两方面的投资，金融投资和智力投资。不过现在得加一个了，知识库投资。",
+    "title": "金融投资与智力复利",
+    "date": "2026-05-07",
+    "section": "thoughts",
+    "slug": "diary-132",
+    "media": 0
+  },
+  {
+    "number": 133,
+    "originalPreview": "AI发展速度 · 突然意识到一个很恐怖的事情，目前ai的发展一直在踩油门，一点放缓的迹象都没有，甚至现在的ai和之前的互联网泡沫…",
+    "title": "AI发展速度与资本流向",
+    "date": "2026-05-08",
+    "section": "thoughts",
+    "slug": "diary-133",
+    "media": 0
+  },
+  {
+    "number": 136,
+    "originalPreview": "外卖小哥买奥迪a6是对是错？",
+    "title": "外卖小哥买奥迪A6，是对是错",
+    "date": "2026-05-13",
+    "section": "thoughts",
+    "slug": "diary-136",
+    "media": 0
+  },
+  {
+    "number": 140,
+    "originalPreview": "比较喜欢的两个理论 · 耿同学的蛙跳理论：从北京到大连有很多出行方式，蛙跳也是其中一种，可以有效缩短距离终点的距离。但既然出行方…",
+    "title": "蛙跳理论与狗熊理论",
+    "date": "2026-05-21",
+    "section": "thoughts",
+    "slug": "diary-140",
+    "media": 0
+  },
+  {
+    "number": 145,
+    "originalPreview": "我发现一个很有意思的现象就是，现在很多不善于折腾的人，他们在部署openclaw、claudecode这种不是解压即用的复杂工具…",
+    "title": "用简单的AI工具部署复杂的AI工具",
+    "date": "2026-05-25",
+    "section": "thoughts",
+    "slug": "diary-145",
+    "media": 0
+  },
+  {
+    "number": 146,
+    "originalPreview": "AI时代人类就不需要学习了？我突然想到一个很好的反驳点：汽车速度比人类快人类就不需要跑步了？体力劳动被机器替代人类就不需要健身了…",
+    "title": "学习是为了融入人类社会",
+    "date": "2026-05-26",
+    "section": "thoughts",
+    "slug": "diary-146",
+    "media": 0
+  },
+  {
+    "number": 148,
+    "originalPreview": "AI时代下的最强心法",
+    "title": "AI时代，继续提高自己、体验生活",
+    "date": "2026-05-28",
+    "section": "thoughts",
+    "slug": "diary-148",
+    "media": 0
+  },
+  {
+    "number": 157,
+    "originalPreview": "我突然觉得Anthropic all in coding的决策太正确了。Anthropic不和别的ai公司一样，它不研究生图生视…",
+    "title": "为什么我看好Anthropic专注代码的路线",
+    "date": "2026-06-12",
+    "section": "thoughts",
+    "slug": "diary-157",
+    "media": 0
+  },
+  {
+    "number": 168,
+    "originalPreview": "在平台遇到委屈了一定要去投诉",
+    "title": "理发预约落空后的一次投诉",
+    "date": "2026-06-30",
+    "section": "daily",
+    "slug": "diary-168",
+    "media": 1
+  },
+  {
+    "number": 170,
+    "originalPreview": "今天基金亏了300多，是我有史以来遇到的最大幅度的亏损。其实我上车的时候，科技就已经涨飞了，公司估值都特别高，我明明知道早晚会亏…",
+    "title": "一次基金回撤带来的提醒",
+    "date": "2026-07-02",
+    "section": "daily",
+    "slug": "diary-170",
+    "media": 0
+  },
+  {
+    "number": 171,
+    "originalPreview": "现在特别后悔一件事，因为之前科技大牛市，我却不满足于纳指的收益，于是疯狂买入qdii的主动基金，在不算纳指的情况下，都买了八个基…",
+    "title": "追涨科技主动基金后的复盘",
+    "date": "2026-07-03",
+    "section": "thoughts",
+    "slug": "diary-171",
+    "media": 0
+  },
+  {
+    "number": 179,
+    "originalPreview": "复盘一下我近几个月的投资经历吧。我是从今年过年开始，逐渐把资金从银行理财→余额宝→货币基金→债券基金→固收+进行配置。",
+    "title": "从银行理财到科技基金的投资复盘",
+    "date": "2026-07-13",
+    "section": "thoughts",
+    "slug": "diary-179",
+    "media": 1
+  },
+  {
+    "number": 187,
+    "originalPreview": "论接受度 · 任何求偶标准都是扯淡，搞成与否的核心在于接受度。即使对方再不符合你的要求，只要能满足接受度这条底线，你们就有机会日…",
+    "title": "兴趣与关系中的接受度",
+    "date": "2026-07-24",
+    "section": "thoughts",
+    "slug": "diary-187",
+    "media": 0
+  },
+  {
+    "number": 196,
+    "originalPreview": "苦难与魅力 · 在抖音上看见了这么一条评论，下面这个人说苦难没有任何价值，你怎么看？我个人觉得苦难是环境的一部分，所以说环境没有…",
+    "title": "苦难、环境与人格魅力",
+    "date": "2026-08-29",
+    "section": "thoughts",
+    "slug": "diary-196",
+    "media": 1
+  },
+  {
+    "number": 199,
+    "originalPreview": "今天回学校了。刚出地铁口就看见两个举着牌的志愿者，他们可能觉得我是新生，还贴心地给我指路。然后我拎着两个大包进地铁口边上的校门，…",
+    "title": "大四返校，被一路当成了新生",
+    "date": "2026-09-02",
+    "section": "daily",
+    "slug": "diary-199",
+    "media": 0
+  },
+  {
+    "number": 208,
+    "originalPreview": "我今天好像明白了读书的意义，读书最重要的不是记忆，而是它在你大脑里留下的痕迹，这个痕迹会影响你的思维方式。就比如我现在只要看到“…",
+    "title": "读书留下的痕迹与多变量思维",
+    "date": "2026-03-06",
+    "section": "thoughts",
+    "slug": "diary-208",
+    "media": 0
+  },
+  {
+    "number": 209,
+    "originalPreview": "今天用了一天的时间做了一个伟大的事情——第一次进行内容产出——发了第一篇微信公众号。这么长时间我几乎都是在吸收知识，从来没有把这…",
+    "title": "第一次发布微信公众号文章",
+    "date": "2026-03-07",
+    "section": "daily",
+    "slug": "diary-209",
+    "media": 0
+  },
+  {
+    "number": 265,
+    "originalPreview": "弥补了过去知识的空白，TUN与全局模式的区别：",
+    "title": "TUN与规则、全局模式的区别",
+    "date": "2026-06-07",
+    "section": "explore",
+    "slug": "diary-265",
+    "media": 0
+  },
+  {
+    "number": 319,
+    "originalPreview": "今天把上周在实训电脑上安装的 openSUSE 系统删除了，在删除的过程中，由于只删了系统文件，没清理 EFI 系统分区里的引导…",
+    "title": "删除openSUSE后恢复Windows引导",
+    "date": "2026-07-13",
+    "section": "explore",
+    "slug": "diary-319",
+    "media": 0
+  },
+  {
+    "number": 322,
+    "originalPreview": "今天实训老师要录入每个人模拟测试的成绩，但是这个模拟测试效率很低，远没有自己看题学的快，于是我用浏览器的审查元素修改了模拟测试的…",
+    "title": "用浏览器开发者工具修改页面元素",
+    "date": "2026-07-15",
+    "section": "explore",
+    "slug": "diary-322",
+    "media": 0
+  },
+  {
+    "number": 454,
+    "originalPreview": "测试了一下新出的gpt6-astra，首先是computer use能力提高了不少，操作正确率提高了，但是速度还是和之前一样慢，…",
+    "title": "GPT-6 Astra的电脑操作与CAD体验",
+    "date": "2026-09-05",
+    "section": "explore",
+    "slug": "diary-454",
+    "media": 0
+  }
+]

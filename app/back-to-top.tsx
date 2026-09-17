@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from 'react';
-import { ArrowUp } from 'lucide-react';
 export default function BackToTop() {
   const anchor = useRef<HTMLSpanElement>(null);
   const button = useRef<HTMLButtonElement>(null);
@@ -46,6 +45,6 @@ export default function BackToTop() {
     };
   }, []);
   const goTop = () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-  const label = <>回到顶部<ArrowUp size={22} strokeWidth={1.4} aria-hidden="true" /></>;
-  return <span className="back-to-top-slot" ref={anchor}><span className="back-to-top back-to-top-placeholder" aria-hidden="true">{label}</span><button ref={button} type="button" className="back-to-top back-to-top-control" onClick={goTop}>{label}</button></span>;
+  const label = '回到顶部';
+  return <span className="back-to-top-slot" ref={anchor}><span className="back-to-top back-to-top-placeholder return-control" aria-hidden="true">{label}</span><button ref={button} type="button" className="back-to-top back-to-top-control return-control" onClick={goTop}>{label}</button></span>;
 }

@@ -3,7 +3,7 @@
     "slug": "a-students-awakening",
     "title": "一个普通大学生的认知觉醒",
     "category": "个人成长",
-    "minutes": 18,
+    "minutes": 23,
     "cover": {
       "src": "/blog/assets/3807b4afd5ded5c39e57.jpg",
       "width": 1920,
@@ -17,7 +17,7 @@
     "slug": "essential-windows-apps",
     "title": "电脑装机必备——分享几款让我效率翻倍的软件",
     "category": "效率工具",
-    "minutes": 4,
+    "minutes": 14,
     "cover": {
       "src": "/blog/assets/067cc3016a36c80c4484.webp",
       "width": 1376,
@@ -31,7 +31,7 @@
     "slug": "tampermonkey-guide",
     "title": "一个插件让浏览器开挂——“油猴”脚本保姆级使用教程",
     "category": "浏览器工具",
-    "minutes": 3,
+    "minutes": 13,
     "cover": {
       "src": "/blog/assets/8fad34bd7a39debe0001.webp",
       "width": 1920,
@@ -45,7 +45,7 @@
     "slug": "github-guide",
     "title": "从此找资源速度快人一步：适合小白的Github入门使用教程",
     "category": "工具指南",
-    "minutes": 3,
+    "minutes": 8,
     "cover": {
       "src": "/blog/assets/f6c1c8d47dcf3cda55f1.webp",
       "width": 2560,
@@ -59,7 +59,7 @@
     "slug": "save-original-images",
     "title": "不管在哪都能存原图？亲测可用的一套方法，告别“截图”和“水印”",
     "category": "实用技巧",
-    "minutes": 3,
+    "minutes": 9,
     "cover": {
       "src": "/blog/assets/41702bc7c36041527571.webp",
       "width": 1376,
@@ -73,7 +73,7 @@
     "slug": "photoshop-basics",
     "title": "Photoshop最详细的新手入门教学——基础知识篇",
     "category": "图像处理",
-    "minutes": 9,
+    "minutes": 19,
     "cover": {
       "src": "/blog/assets/ca9c39b8f572fe122ae1.webp",
       "width": 1376,
@@ -96,7 +96,7 @@
     "slug": "claude-code-guide",
     "title": "ClaudeCode超详细入门教程",
     "category": "编程工具",
-    "minutes": 3,
+    "minutes": 13,
     "cover": {
       "src": "/blog/assets/f75cd6f136962e005630.webp",
       "width": 2752,

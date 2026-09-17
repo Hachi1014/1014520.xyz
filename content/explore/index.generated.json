@@ -1,12 +1,44 @@
 [
   {
+    "title": "GPT-6 Astra的电脑操作与CAD体验",
+    "category": "智能体实践",
+    "date": "2026-09-05",
+    "minutes": 1,
+    "slug": "diary-454",
+    "endDate": ""
+  },
+  {
+    "title": "用浏览器开发者工具修改页面元素",
+    "category": "浏览器工具",
+    "date": "2026-07-15",
+    "minutes": 1,
+    "slug": "diary-322",
+    "endDate": ""
+  },
+  {
+    "title": "删除openSUSE后恢复Windows引导",
+    "category": "系统安装",
+    "date": "2026-07-13",
+    "minutes": 1,
+    "slug": "diary-319",
+    "endDate": ""
+  },
+  {
+    "title": "TUN与规则、全局模式的区别",
+    "category": "网络知识",
+    "date": "2026-06-07",
+    "minutes": 1,
+    "slug": "diary-265",
+    "endDate": ""
+  },
+  {
     "slug": "hermes-arch-linux-installation",
     "title": "用 Hermes 指挥 Arch Linux 系统的安装",
     "category": "系统安装",
     "date": "2026-05-29",
     "endDate": "2026-05-30",
     "status": "已完成",
-    "minutes": 3
+    "minutes": 15
   },
   {
     "slug": "dual-boot-installation",
@@ -15,7 +47,42 @@
     "date": "2026-05-17",
     "endDate": "2026-07-03",
     "status": "已完成",
-    "minutes": 2
+    "minutes": 6
+  },
+  {
+    "slug": "codex-first-experience",
+    "title": "Codex初体验",
+    "category": "智能体实践",
+    "date": "2026-05-13",
+    "endDate": "2026-06-06",
+    "status": "已完成",
+    "minutes": 9
+  },
+  {
+    "slug": "fnos-first-experience",
+    "title": "飞牛OS初体验",
+    "category": "自托管实践",
+    "date": "2026-05-13",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 4
+  },
+  {
+    "slug": "sillytavern-first-experience",
+    "title": "AI酒馆——SillyTavern",
+    "category": "AI 应用",
+    "date": "2026-05-10",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 4
+  },
+  {
+    "title": "骑车先学会刹车：车感与路感",
+    "category": "骑行技巧",
+    "date": "2026-04-05",
+    "minutes": 2,
+    "slug": "diary-103",
+    "endDate": ""
   },
   {
     "slug": "openclaw-and-hermes",
@@ -24,6 +91,66 @@
     "date": "2026-02-10",
     "endDate": "2026-05-19",
     "status": "已完成",
-    "minutes": 2
+    "minutes": 8
+  },
+  {
+    "slug": "xyz-domain-purchase",
+    "title": "一级域名购买.xyz",
+    "category": "自托管实践",
+    "date": "2026-02-04",
+    "endDate": "2026-05-10",
+    "status": "已完成",
+    "minutes": 5
+  },
+  {
+    "title": "二手iPhone的选购记录与到手体验",
+    "category": "数码体验",
+    "date": "2026-01-21",
+    "minutes": 2,
+    "slug": "diary-061",
+    "endDate": ""
+  },
+  {
+    "slug": "crypto-first-experience",
+    "title": "虚拟币初体验",
+    "category": "数字资产",
+    "date": "2026-01-11",
+    "endDate": "2026-01-17",
+    "status": "已完成",
+    "minutes": 9
+  },
+  {
+    "slug": "arch-linux-installation",
+    "title": "Arch Linux安装过程",
+    "category": "系统安装",
+    "date": "2025-12-21",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 4
+  },
+  {
+    "slug": "vmware-and-macos",
+    "title": "VMware虚拟机研究及黑苹果系统",
+    "category": "系统安装",
+    "date": "2025-12-16",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 6
+  },
+  {
+    "title": "第一次搭建并部署个人博客",
+    "category": "自托管实践",
+    "date": "2025-02-28",
+    "minutes": 2,
+    "slug": "diary-031",
+    "endDate": ""
+  },
+  {
+    "title": "用Photoshop魔棒工具处理阴影",
+    "category": "图像处理",
+    "date": "2024-01-30",
+    "minutes": 3,
+    "slug": "diary-012",
+    "endDate": ""
   }
 ]

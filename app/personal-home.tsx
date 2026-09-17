@@ -1,33 +1,42 @@
 /* oxlint-disable next/no-html-link-for-pages -- Native navigation avoids the deployed vinext Link runtime failure. */
 'use client';
 
-import { useEffect, useState, useSyncExternalStore, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
-import { ArrowDown, ArrowUpRight, Moon, Sun, Asterisk, BookOpen, Lightbulb, Coffee, Compass } from 'lucide-react';
-import { Switch } from '@/components/ui/switch';
-import ResumeEntry from './resume-entry';
+import { ArrowDown, ArrowUpRight, BookOpen, Lightbulb, Coffee, Compass } from 'lucide-react';
+import SiteHeader from './site-header';
 import FooterContact from './footer-contact';
 import FooterCredits from './footer-credits';
 import DitherBackground from './dither-background';
 import DotField from './how-it-works/dot-field';
+import posts from '@/content/blog/index.generated.json';
+import thoughts from '@/content/thoughts-index.json';
+import daily from '@/content/daily.json';
+import explorations from '@/content/explore/index.generated.json';
+import { articleHref, type Section } from './entry-navigation';
+
+type RecentEntry = { section: Section; id: string; title: string; date: string; label: string; minutes?: number };
+const recentEntries: RecentEntry[] = [
+  ...posts.map(post => ({ section: 'blog' as const, id: post.slug, title: post.title, date: post.publishedAt ?? '', label: '博客', minutes: post.minutes })),
+  ...thoughts.map(thought => ({ section: 'thoughts' as const, id: thought.id, title: thought.title, date: thought.date, label: '想法', minutes: thought.minutes })),
+  ...daily.map(entry => {
+    const text = entry.paragraphs.join(' ');
+    const characters = Array.from(text);
+    return { section: 'daily' as const, id: entry.id, title: characters.length > 48 ? characters.slice(0, 48).join('') + '…' : text, date: entry.date, label: '日常' };
+  }),
+  ...explorations.map(entry => ({ section: 'explore' as const, id: entry.slug, title: entry.title, date: entry.date, label: '探索', minutes: entry.minutes })),
+];
+const recentPosts = recentEntries.filter(entry => entry.date).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
 
 const chapters = [
   { id: 'blog', number: '01', english: 'BLOG', title: '博客', icon: BookOpen },
   { id: 'thoughts', number: '02', english: 'THOUGHTS', title: '想法', icon: Lightbulb },
   { id: 'daily', number: '03', english: 'DAILY', title: '日常', icon: Coffee },
-  { id: 'explore', number: '04', english: 'EXPLORE', title: 'Explore', icon: Compass },
+  { id: 'explore', number: '04', english: 'EXPLORE', title: '探索', icon: Compass },
 ];
 
-function subscribeTheme(update: () => void) {
-  const observer = new MutationObserver(update);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  return () => observer.disconnect();
-}
-const readTheme = () => document.documentElement.dataset.theme === 'light';
-const serverTheme = () => false;
 
 export default function PersonalHome({ children }: { children: ReactNode }) {
-  const light = useSyncExternalStore(subscribeTheme, readTheme, serverTheme);
   const [active, setActive] = useState<number | null>(null);
   const [currentSection, setCurrentSection] = useState('home');
   useEffect(() => {
@@ -64,46 +73,43 @@ export default function PersonalHome({ children }: { children: ReactNode }) {
       window.removeEventListener('resize', schedule);
     };
   }, []);
-  function changeTheme(value: boolean) {
-    const theme = value ? 'light' : 'dark';
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.classList.toggle('dark', !value);
-    try { localStorage.setItem('personal-theme', theme); } catch { /* Storage is optional. */ }
-  }
 
   return <main className="personal-home" id="home">
     <a className="skip-link" href="#about">跳到正文</a>
-    <header className="site-header">
-      <div className="header-brand"><a className="wordmark" href="#home" aria-label="zhangboyang 的个人网站首页"><span className="dot-mark" aria-hidden="true" />zhangboyang<span className="wordmark-period">.</span></a><ResumeEntry /></div>
-      <nav className="site-nav" aria-label="主导航"><a href="#home" aria-current={currentSection == "home" ? "location" : undefined}>首页</a>{chapters.map(chapter => <a key={chapter.id} href={'#' + chapter.id} aria-current={currentSection === chapter.id ? 'location' : undefined}>{chapter.title}</a>)}</nav>
-      <div className="header-actions"><label className="theme-control" htmlFor="theme-toggle"><Moon size={16} aria-hidden="true" /><Switch id="theme-toggle" className="theme-switch" checked={light} onCheckedChange={changeTheme} aria-label="使用蓝白亮色主题" /><Sun size={17} aria-hidden="true" /></label></div>
-    </header>
+    <SiteHeader home><a href="#home" aria-current={currentSection == "home" ? "location" : undefined}>首页</a>{chapters.map(chapter => <a key={chapter.id} href={'#' + chapter.id} aria-current={currentSection === chapter.id ? 'location' : undefined}>{chapter.title}</a>)}</SiteHeader>
 
+    <div className="elastic-page-viewport"><div className="elastic-page-content">
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-art"><DitherBackground /></div>
       <div className="hero-shade" aria-hidden="true" />
       <div className="hero-content">
-        <p className="eyebrow"><span className="small-dot" />zhangboyang / Tech Enthusiast</p>
+        <p className="eyebrow">NOTES ON A CURIOUS LIFE</p>
         <h1 id="hero-title">保持好奇<span className="title-period">.</span><br /><span className="second-line">让想法发生</span><span className="title-period">.</span></h1>
         <p className="hero-intro">你好，我是 zhangboyang，一名技术爱好者。<br />研究点技术，琢磨点问题，记录点生活。</p>
-        <a href="#about" className="explore-link">往下看看<span><ArrowDown size={19} aria-hidden="true" /></span></a>
       </div>
+      <a href="#about" className="scroll-cue" aria-label="向下探索，浏览文字、灵感与生活"><span className="scroll-cue-track" aria-hidden="true" /><span className="scroll-cue-copy" aria-hidden="true"><span>SCROLL TO</span><span>EXPLORE</span></span></a>
+      <aside className="hero-window-wrap" aria-label="最近更新">
+        <div className="hero-window liquid-surface" data-liquid="true">
+          <div className="hero-window-top"><span>最近写下</span><span className="window-mark" aria-hidden="true" /></div>
+          {recentPosts.map(post => <a className="hero-recent" key={`${post.section}-${post.id}`} href={articleHref(post.section, post.id, '/')}><div><p>{post.label} · <time dateTime={post.date}>{post.date.replaceAll('-', '.')}</time>{post.minutes != null && <> · 约 {post.minutes} 分钟</>}</p><h2>{post.title}</h2></div><ArrowUpRight size={20} strokeWidth={1.3} aria-hidden="true" /></a>)}
+        </div>
+      </aside>
       <div className="hero-bottom"><span className="hero-coordinate">STAY CURIOUS, KEEP CREATING.</span><a href="#about" aria-label="向下浏览"><ArrowDown size={18} /></a></div>
     </section>
 
     <section className="about-section" id="about" aria-labelledby="about-title">
-      <div className="section-kicker"><span>01 / JOURNAL</span><Asterisk size={27} strokeWidth={1.4} aria-hidden="true" /></div>
-      <div className="about-heading"><h2 id="about-title">文字、灵感与生活<span>.</span></h2><p>长一点的记录，短一点的思考。<br />还有那些平凡却值得记住的日常。</p></div>
+      <div className="section-kicker"><span>01 / JOURNAL</span></div>
+      <div className="about-heading"><h2 id="about-title">文字、灵感与生活<span>.</span></h2></div>
       <div className="chapter-grid">
-        {chapters.map((chapter, index) => <article id={chapter.id + '-card'} key={chapter.number} className="chapter" data-active={active === index} onPointerEnter={() => setActive(index)} onPointerLeave={() => setActive(null)}>
-          <div className="chapter-dots" aria-hidden="true"><DotField active index={0} monochrome /></div>
+        {chapters.map((chapter, index) => <article id={chapter.id + '-card'} key={chapter.number} className="chapter liquid-surface" data-liquid="true" data-active={active === index} onPointerEnter={event => { if (event.pointerType !== 'touch') setActive(index); }} onPointerLeave={() => setActive(null)}>
+          <div className="chapter-dots" aria-hidden="true">{active === index && <DotField active index={0} monochrome />}</div>
           <div className="chapter-top"><span>{chapter.number}</span><chapter.icon size={24} strokeWidth={1.3} aria-hidden="true" /></div>
           <div className="chapter-copy"><span className="chapter-english">{chapter.english}</span><h3>{<a className="blog-entry" href={'#' + chapter.id}>{chapter.title}</a>}</h3></div>
         </article>)}
       </div>
-      <div className="personal-note"><span className="small-dot" /><p>这个空间，和我一样，持续生长中。</p></div>
     </section>
     {children}
-    <footer className="site-footer"><FooterCredits /><span>保持好奇，下次见。</span><FooterContact /><a className="back-top" href="#home">回到顶部<ArrowUpRight size={17} aria-hidden="true" /></a></footer>
+    <footer className="site-footer"><FooterCredits /><span>保持好奇，下次见。</span><FooterContact /><a className="back-top return-control" href="#home">回到顶部</a></footer>
+    </div></div>
   </main>;
 }

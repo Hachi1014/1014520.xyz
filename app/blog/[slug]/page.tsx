@@ -1,3 +1,5 @@
+import ArticleBackLink from '@/app/article-back-link';
+import ArticleToc from '@/app/article-toc';
 import { returnToEntry } from '@/app/entry-navigation';
 /* oxlint-disable next/no-html-link-for-pages -- Native navigation avoids the deployed vinext Link runtime failure. */
 import type { Metadata } from 'next';
@@ -25,16 +27,17 @@ export default async function ArticlePage({ params, searchParams }: Props) {
   const next = posts[index + 1];
   const notice = articleNotes[post.slug]?.notice;
   return <main className="article-page" id="blog-content">
-    <a className="article-back" href={backHref}>← 返回</a>
+    <div className="article-back"><ArticleBackLink href={backHref} /></div>
     <header className="article-heading"><p className="post-meta"><span>{post.category}</span>{post.publishedAt && <time dateTime={post.publishedAt}>{post.publishedAt.replaceAll('-', '.')}</time>}<span>约 {post.minutes} 分钟</span></p><h1>{post.title}</h1><p className="article-author">zhangboyang</p></header>
+    <ArticleToc headings={post.toc} collapsible />
     <div className="article-layout">
       <article className="article-body">
         {post.cover && <Image unoptimized className="article-cover" src={post.cover.src} alt="" width={post.cover.width} height={post.cover.height} fetchPriority="high" />}
         {notice && <aside className="article-notice" aria-label="文章说明"><Info size={20} strokeWidth={1.6} aria-hidden="true" /><p>{notice}</p></aside>}
         <div className="article-prose" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="article-end"><a href={backHref}>← 返回</a>{next && <a href={`/blog/${next.slug}`}>下一篇：{next.title} →</a>}</div>
+        <div className="article-end"><ArticleBackLink href={backHref} />{next && <a href={`/blog/${next.slug}`}>下一篇：{next.title} →</a>}</div>
       </article>
-      {post.toc.length > 0 && <aside className="article-toc"><nav aria-label="文章目录"><p>文章目录</p>{post.toc.map(heading => <a key={heading.id} href={`#${heading.id}`}>{heading.text}</a>)}</nav></aside>}
+      <ArticleToc headings={post.toc} />
     </div>
   </main>;
 }

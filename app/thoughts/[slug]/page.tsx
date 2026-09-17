@@ -1,3 +1,4 @@
+import ArticleBackLink from '@/app/article-back-link';
 import { returnToEntry } from '@/app/entry-navigation';
 import ThoughtDate from '@/app/thought-date';
 import ThoughtProse from '../prose';
@@ -23,11 +24,11 @@ export default async function ThoughtPage({ params, searchParams }: Props) {
   const thought = thoughts[index];
   const next = thoughts[index + 1];
   return <main className="article-page" id="thoughts-content">
-    <a className="article-back" href={backHref}>← 返回</a>
+    <div className="article-back"><ArticleBackLink href={backHref} /></div>
     <header className="article-heading"><p className="post-meta"><span>{thought.category}</span><ThoughtDate date={thought.date} endDate={thought.endDate} /><span>约 {thought.minutes} 分钟</span></p><h1>{thought.title}</h1><p className="article-author">zhangboyang</p></header>
     <div className="article-layout"><article className="article-body">
-      <ThoughtProse paragraphs={thought.paragraphs} />
-      <div className="article-end"><a href={backHref}>← 返回</a>{next && <a href={'/thoughts/' + next.id}>下一篇：{next.title} →</a>}</div>
+      {thought.html ? <div className="article-prose" dangerouslySetInnerHTML={{ __html: thought.html }} /> : <ThoughtProse paragraphs={thought.paragraphs} />}
+      <div className="article-end"><ArticleBackLink href={backHref} />{next && <a href={'/thoughts/' + next.id}>下一篇：{next.title} →</a>}</div>
     </article></div>
   </main>;
 }

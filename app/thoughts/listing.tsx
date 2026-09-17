@@ -18,7 +18,7 @@ export default function ThoughtsListing({ embedded = false, initialView, initial
   const filtered = view === 'categories' && activeGroup
     ? thoughts.filter(thought => activeGroup.categories.includes(thought.category))
     : thoughts;
-  const visibleThoughts = embedded ? filtered.slice(0, 10) : filtered;
+  const visibleThoughts = embedded ? filtered.slice(0, 3) : filtered;
   const Heading = embedded ? 'h2' : 'h1';
   const GroupHeading = embedded ? 'h3' : 'h2';
   const ItemHeading = view === 'categories' ? (embedded ? 'h4' : 'h3') : (embedded ? 'h3' : 'h2');
@@ -52,6 +52,6 @@ export default function ThoughtsListing({ embedded = false, initialView, initial
       })}
     </div>
     </>}
-    {embedded && <SectionMore href={fullListHref} label="展开全部想法" />}
+    {embedded && filtered.length > visibleThoughts.length && <SectionMore href={fullListHref} label="查看全部想法" />}
   </>;
 }

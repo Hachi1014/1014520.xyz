@@ -6,4 +6,4 @@ export type ThoughtSummary = {
   date: string;
   endDate?: string;
 };
-export type Thought = ThoughtSummary & { paragraphs: string[] };
+export type Thought = ThoughtSummary & { paragraphs: string[]; html?: string };

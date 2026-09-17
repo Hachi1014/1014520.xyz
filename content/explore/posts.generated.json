@@ -1,12 +1,52 @@
 [
   {
+    "title": "GPT-6 Astra的电脑操作与CAD体验",
+    "category": "智能体实践",
+    "date": "2026-09-05",
+    "minutes": 1,
+    "html": "<p>测试了一下新出的gpt6-astra，首先是computer use能力提高了不少，操作正确率提高了，但是速度还是和之前一样慢，仍然有很大的进步空间。另外在处理三维模型和CAD方面又比之前进步不少，这对机加工领域简直是个重大利好，不敢想象未来得有多牛逼。但是现在手里实在找不出什么测试案例了，空有20x的pro会员，以及两张重置卡(后面又看了一眼已经三张了)，但是却不知道干什么，实在是有一种愧疚感。</p>\n",
+    "slug": "diary-454",
+    "endDate": "",
+    "toc": []
+  },
+  {
+    "title": "用浏览器开发者工具修改页面元素",
+    "category": "浏览器工具",
+    "date": "2026-07-15",
+    "minutes": 1,
+    "html": "<p>今天实训老师要录入每个人模拟测试的成绩，但是这个模拟测试效率很低，远没有自己看题学的快，于是我用浏览器的审查元素修改了模拟测试的答案，节约了自己对照着答案抄的时间。具体操作就是用f12打开浏览器开发者工具(也就是审查元素)，然后在顶部菜单栏选择元素。进入元素界面之后需要注意一个问题，就是我们能进行修改的地方在“控制台”的上面，但是很多时候，控制台的窗口位置，会把元素窗口给盖住，这就是为什么很多人找不到修改元素的地方。</p>\n",
+    "slug": "diary-322",
+    "endDate": "",
+    "toc": []
+  },
+  {
+    "title": "删除openSUSE后恢复Windows引导",
+    "category": "系统安装",
+    "date": "2026-07-13",
+    "minutes": 1,
+    "html": "<p>今天把上周在实训电脑上安装的 openSUSE 系统删除了，在删除的过程中，由于只删了系统文件，没清理 EFI 系统分区里的引导文件，从而导致了开机失败。详细来说就是：开机时 UEFI 固件仍按原来的启动顺序去找 openSUSE 的 GRUB，但 GRUB 的配置文件（在原系统分区里）已被删除，于是 GRUB 找不到配置，卡在命令行界面。</p>\n<p>完整的解决方法：</p>\n<ol>\n<li><code>ls</code> → 确认分区结构</li>\n<li><code>ls (hd0,gpt1)/</code> → 发现是 EFI 分区，里面有 <code>efi/</code> 文件夹</li>\n<li><code>chainloader /efi/Microsoft/Boot/bootmgfw.efi</code> → 加载 Windows 引导器</li>\n<li><code>boot</code> → 启动 Windows</li>\n</ol>\n",
+    "slug": "diary-319",
+    "endDate": "",
+    "toc": []
+  },
+  {
+    "title": "TUN与规则、全局模式的区别",
+    "category": "网络知识",
+    "date": "2026-06-07",
+    "minutes": 1,
+    "html": "<p>弥补了过去知识的空白，TUN与全局模式的区别：<br>\nTUN模式是在网络层创建一个虚拟网卡，强制接所有网络流量，让所有网络流量都走代理。它相当于一个流量捕获器，只是确保“没有漏网之鱼”。<br>\n规则或者全局模式决定的是流量怎么被代理。规则模式下就是国内直连，国外代理；全局模式下都走国外代理。</p>\n",
+    "slug": "diary-265",
+    "endDate": "",
+    "toc": []
+  },
+  {
     "slug": "hermes-arch-linux-installation",
     "title": "用 Hermes 指挥 Arch Linux 系统的安装",
     "category": "系统安装",
     "date": "2026-05-29",
     "endDate": "2026-05-30",
     "status": "已完成",
-    "minutes": 3,
+    "minutes": 15,
     "html": "<p>今天突发奇想，既然Archlinux是从0开始安装系统，那么假如我在系统里部署一个Agent，是不是只需要AI来帮我执行各种麻烦的安装过程，我只需要指挥它就好了？那么说干就干。</p>\n<p id=\"section-1\">第一步下载iso镜像文件<br>\n<a href=\"https://mirrors.aliyun.com/archlinux/iso/2026.05.01/\" rel=\"nofollow\" target=\"_blank\">archlinux-iso-2026.05.01安装包下载-开源镜像站-阿里云</a><br>\n文件名：archlinux-x86_64.iso</p>\n<p>用的idm下载，大概用了两分钟<br>\n<img src=\"/explore/assets/b7de8a449ccb8da175e9bbe7.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"989\" height=\"704\"></p>\n<p>初步设置<br>\n<img src=\"/explore/assets/4f3eb54bc9d254a4cf9fa419.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1286\" height=\"969\"><br>\n<img src=\"/explore/assets/0477517bd4c04b8f6940ab13.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1286\" height=\"969\"></p>\n<p>这是进来的第一个界面，真的是纯黑框<br>\n<img src=\"/explore/assets/57e400f60a433ecfabe2399d.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"847\" height=\"454\"></p>\n<p>首先来ping一下，看看连没连上网，然后就可以直接安装Hermes了。<br>\n<img src=\"/explore/assets/b70ee71fd20a5fc89f916e15.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"913\" height=\"691\"></p>\n<p>但是在虚拟机里我们没法粘贴指令，所以需要先用一下ssh连接到我们本地的终端</p>\n<p>先用ip addr show，获取一下ip<br>\n<img src=\"/explore/assets/5ee9fffa9c5171d828197067.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"851\" height=\"283\"></p>\n<p>接下来在自己的终端里输入ssh root@192.168.47.137<br>\n<img src=\"/explore/assets/bcbb823858e1c8c7b346ef7e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>等等，这里漏了一步，还没设置密码呢，我说ssh怎么连接不上<br>\n<img src=\"/explore/assets/e88e401c55478df6ed01f904.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"324\" height=\"101\"></p>\n<p>ok呀，现在就成功了，我可以直接在自己的终端里控制archlinux了<br>\n<img src=\"/explore/assets/477292108e0611fc1f7b2425.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>接下来启动代理，运行安装命令</p>\n<pre><code>curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash\n</code></pre>\n<p>能进入安装界面，说明咱们的想法已经基本得到验证了<br>\n<img src=\"/explore/assets/b55e7ff2f041cf6e8bce8148.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>坏了停止了，还需要我们手动安装git<br>\n<img src=\"/explore/assets/8656e05aab41acaedb42611e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"642\" height=\"184\"></p>\n<p>结果安装git还报错了，问了一下ai<br>\n<img src=\"/explore/assets/7e1d18bcecac2df52385dbea.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"1439\" height=\"885\"></p>\n<p>这下git安装成功了<br>\n<img src=\"/explore/assets/865a7a5c34e202a92bf16a52.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"923\"></p>\n<p>再次回到hermes的安装，遭到严重报错<br>\n<img src=\"/explore/assets/ce1adbe61a58fa5bf85f6a3b.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>发给ai之后，它告诉我磁盘空间满了<br>\n<img src=\"/explore/assets/d1daa815366df75735f132f5.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"1285\" height=\"859\"></p>\n<p>还真是，cowspace和 airootfs 都满了<br>\n<img src=\"/explore/assets/5f6ccd64fe9c79b3950aba89.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 16\" loading=\"lazy\" decoding=\"async\" width=\"1471\" height=\"605\"></p>\n<p>接下来扩容</p>\n<p>在系统启动的时候狂按e，会进入到grub界面<br>\n<img src=\"/explore/assets/0054505ecc7b017385f9f1fe.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 17\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\"></p>\n<p>然后点击tab键进行编辑<br>\n<img src=\"/explore/assets/0df4d17714340f9b484564ac.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 18\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\"></p>\n<p>按空格，补上下面这行<br>\ncow_spacesize=4G<br>\n然后按enter进入系统<br>\n<img src=\"/explore/assets/55824d4194aba0f5d772bf0f.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 19\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"480\"></p>\n<p>ai牛逼，扩容成功<br>\n<img src=\"/explore/assets/5b8b5af1cbd37985a3e5b2ef.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 20\" loading=\"lazy\" decoding=\"async\" width=\"708\" height=\"389\"></p>\n<p>继续ssh连接，然后再次安装hermes</p>\n<p>这时候我发现了一个奇怪的问题，我再次进入系统的时候，不仅passwd需要重新设置，我上次安装的git也没了，都需要再重新操作一遍，可恶。</p>\n<p>ok,重新鼓捣了一遍，猜猜我这次能成功吗？<br>\n<img src=\"/explore/assets/d8b2d801bb2c8558fd62e4cf.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 21\" loading=\"lazy\" decoding=\"async\" width=\"1683\" height=\"712\"></p>\n<p>对了，ai是这么解释原因的<br>\n<img src=\"/explore/assets/884fab0e13c28c23ac621cbc.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 22\" loading=\"lazy\" decoding=\"async\" width=\"1029\" height=\"589\"></p>\n<p>那么目前虽然没有出现什么报错，但是这个安装速度真的一言难尽<br>\n<img src=\"/explore/assets/d2c0a3230ee39c6a1d808364.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 23\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>忍不了，直接国内镜像</p>\n<pre><code>curl -fsSL https://res1.hermesagent.org.cn/install.sh | bash\n</code></pre>\n<p><img src=\"/explore/assets/2584a71231c48c713e1bd52e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 24\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>牛逼，直接几秒钟就安装完成了<br>\n<img src=\"/explore/assets/e9d67b954cf464b86b32fcd9.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 25\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>后面就是正常的安装过程了</p>\n<p>接上了一个小米的api<br>\n<img src=\"/explore/assets/4657a024dcab9e8b0401bbc3.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 26\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1408\"></p>\n<p>ok，安装成功<br>\n输入下面这个命令，可以重新加载当前 Shell 的配置文件</p>\n<pre><code>source ~/.zshrc\n</code></pre>\n<p>然后输入hermes命令，启动它。但是这里不知道为什么，我输完之后就卡住了。<br>\n<img src=\"/explore/assets/9ef3ca244c94fa31e03003e7.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 27\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>ok，问题再次解决，原来是因为我把代理的tun给关了，后台无法正常下载文件，把tun打开就可以正常下载了。<br>\n<img src=\"/explore/assets/7b21d2c061e6f18a52e8b7d2.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 28\" loading=\"lazy\" decoding=\"async\" width=\"1309\" height=\"1047\"></p>\n<p>下面是见证奇迹的时刻，金色传说啊！我终于成功了！<br>\n<img src=\"/explore/assets/c892e765719acfe7dd425f07.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 29\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1470\"></p>\n<p>现在我要让它介绍一下我的江山<br>\n<img src=\"/explore/assets/06281daf1d52444ad713d1be.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 30\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"4048\"></p>\n<p>爽！！！</p>\n<p>看哭了，为了新入新系统一定要失去你吗😭<br>\n<img src=\"/explore/assets/70a5662c8faa115f7e0eb438.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 31\" loading=\"lazy\" decoding=\"async\" width=\"1728\" height=\"568\"></p>\n<p>好在有解决办法！<br>\n<img src=\"/explore/assets/b2dc962a1cce940722c7812b.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 32\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"3880\"></p>\n<p>重启之后hermes还在，成功达成happy ending<br>\n<img src=\"/explore/assets/cf356f43659836501cd6924e.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 33\" loading=\"lazy\" decoding=\"async\" width=\"1421\" height=\"896\"></p>\n<p>最后再补一张，由于每次遇到hermes敲不了的终端命令，需要我退出之后手动敲，敲完之后再回来之前的聊天对话框就不在了，需要hermes手动拉取之前的历史记录。然后这张图里主要是hermes帮我开了哪些荒：<br>\n<img src=\"/explore/assets/585e57fd116a941bafcf4733.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 34\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"5392\"></p>\n<p>至此，本次折腾圆满结束。</p>\n<p id=\"section-2\">补充：</p>\n<p>进入新系统的hermes并没有携带在live系统时候的记忆，不知道如果我要求的话，能不能添加进来。这个小米模型的配置就不是我手动操作了，是live环境里的hermes帮忙配好的，我用root用户直接输入hermes就正常启动了。<br>\n<img src=\"/explore/assets/f7ce533b0ab0c87cc6e288ff.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 35\" loading=\"lazy\" decoding=\"async\" width=\"1730\" height=\"924\"></p>\n<p>root和user不共用一套hermes配置，所以我一开始用root能进入hermes，但用user就不可以。<br>\n<img src=\"/explore/assets/5eac5c93f5e69708986f4a23.webp\" alt=\"用 Hermes 指挥 Arch Linux 系统的安装 · 步骤截图 36\" loading=\"lazy\" decoding=\"async\" width=\"2539\" height=\"1229\"></p>\n",
     "toc": [
       {
@@ -26,7 +66,7 @@
     "date": "2026-05-17",
     "endDate": "2026-07-03",
     "status": "已完成",
-    "minutes": 2,
+    "minutes": 6,
     "html": "<p id=\"section-1\">2026/5/17</p>\n<p>为什么想折腾双系统呢？<br>\n主要是想用OpenClaw，但是不想让它在我的主系统上运行。可是虚拟机性能又太差，于是想到了双系统这个方案，其实更多的还是想满足自己折腾的欲望。</p>\n<p id=\"section-2\">第一步，制作安装系统U盘<br>\n<a href=\"https://rufus.ie/zh/\" rel=\"nofollow\" target=\"_blank\">Rufus - 轻松创建 USB 启动盘</a><br>\n详细补充：首先需要先准备一个空u盘(即使不是空u盘后续也会被强制格式后)，第二步下载目标系统的iso镜像，第三步用rufus这个工具把iso镜像写进u盘，至此u盘就被格式后，彻底变成了电脑系统的启动盘。</p>\n<p id=\"section-3\">第二步，存储分区</p>\n<p>遇到了第一大难题：我的e盘明明还有140个g，可是可压缩空间只有40g<br>\n<img src=\"/explore/assets/3bd6411c244ba82f90ec8036.webp\" alt=\"电脑双系统安装 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"1130\" height=\"895\"></p>\n<p>结果我随便一搜，卧槽了，居然有人和我有一模一样的问题<br>\n<img src=\"/explore/assets/7c8884fcc288bec9177f4fc0.webp\" alt=\"电脑双系统安装 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1760\" height=\"1324\"></p>\n<p>还有一篇更古老的18年的帖子！结果我仔细阅读之后发现，这个20年的帖子纯搬运的18年的帖子，只不过自己添了一张图。<br>\n<img src=\"/explore/assets/e6a3074eb0e3a1c697929966.webp\" alt=\"电脑双系统安装 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1720\" height=\"1325\"></p>\n<p>最后用尽全力，无法解决这个问题，气死我了。</p>\n<p>这里我又解决了一个误区：</p>\n<ul>\n<li>\n<p>这是右击状态栏<br>\n<img src=\"/explore/assets/385c68773741cc40281fb2b5.webp\" alt=\"电脑双系统安装 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"304\"></p>\n</li>\n<li>\n<p>这是右击win标<br>\n<img src=\"/explore/assets/ed0e79d8c6e751cdec01b05e.webp\" alt=\"电脑双系统安装 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"1771\" height=\"991\"></p>\n</li>\n</ul>\n<p>插入安装U盘之后，狂按F12进入BIOS模式，然后选择下面的Linpus lite进入系统安装界面。<br>\n<img src=\"/explore/assets/888fa4656c0c99a82ed559f3.jpg\" alt=\"电脑双系统安装 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>然后开始选择系统盘的安装位置了，这里用的是我之前从D盘和E盘里抠出来的存储<br>\n<img src=\"/explore/assets/a74b784a5596dd4e67020f2d.jpg\" alt=\"电脑双系统安装 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>跟随向导配置好信息之后重启就OK了。<br>\n<img src=\"/explore/assets/04d1aae0d2e98a0acee349cb.jpg\" alt=\"电脑双系统安装 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>刚进去之后，感觉界面的东西都特别小，然后把显示器设置里面的缩放调成了166%</p>\n<p>还有一个有意思的是，Linux启动应用还需要选择作为程序执行，不然无法正常启动<br>\n<img src=\"/explore/assets/8d3af42a3860812948f6c2ef.jpg\" alt=\"电脑双系统安装 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"2048\" height=\"1536\"></p>\n<p>Linux里面往U盘传文件必须手动点弹出，不然文件不能正常写入</p>\n<p>后面我发现，在Ubuntu和Windows系统的磁盘是共享的，并没有我想象中的隔离效果，那我折腾这么大半天还有什么意义呢？<br>\n除此之外还有一个痛点，现在每次打开电脑，默认进入选择系统界面，而只有单系统的情况下是直接进入但系统的。更过分的是，Ubuntu系统在选择界面的第一个，也就是说长时间不操作默认进入的是Ubuntu系统，可正常来说肯定是Windows用的多啊。</p>\n<p id=\"section-4\">补充：<br>\n1.一定要修改国内镜像源，不然速度是真慢，不知道为什么代理开TUN都不管用。<br>\n下面是开了之后的效果，不开是几十kb每秒。<br>\n<img src=\"/explore/assets/c3c4dcb608739c1904cebfec.webp\" alt=\"电脑双系统安装 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>2.Linux安装的过程很奇怪，需要用到指令。cd进一个文件夹之后，空打一个“cd”就能重新回到初始目录。<br>\n<img src=\"/explore/assets/99451baa8ae5429451f54ea8.webp\" alt=\"电脑双系统安装 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p id=\"section-5\">2026/7/3后续：<br>\n成功卸载ubuntu系统</p>\n",
     "toc": [
       {
@@ -52,13 +92,74 @@
     ]
   },
   {
+    "slug": "codex-first-experience",
+    "title": "Codex初体验",
+    "category": "智能体实践",
+    "date": "2026-05-13",
+    "endDate": "2026-06-06",
+    "status": "已完成",
+    "minutes": 9,
+    "html": "<p id=\"section-1\">2026/5/13</p>\n<p>我发现自从有了好用的机场和英国手机卡之后，我在接触海外环境的路可以说是畅通无阻，今天也是来体验一下桌面版的Codex。</p>\n<p>登录Codex它强制需要验证手机号，下面也是我第一次用WhatsApp。<br>\n<img src=\"/explore/assets/8b27a90a38ee19987d666eec.webp\" alt=\"Codex初体验 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"2440\" height=\"2712\"></p>\n<p><img src=\"/explore/assets/e710f264d345095e647f3363.webp\" alt=\"Codex初体验 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1403\"><br>\n<img src=\"/explore/assets/1b16e6e07b74aa62d3e8da95.webp\" alt=\"Codex初体验 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1922\" height=\"1232\"></p>\n<p><img src=\"/explore/assets/0a8627a0366dd7fd918a562b.webp\" alt=\"Codex初体验 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"1922\" height=\"1232\"></p>\n<p>这里我想把Codex快捷方式放到桌面上，为什么我没有权限啊，这还是我的电脑吗我寻思。。<br>\n<img src=\"/explore/assets/855a56c71bdc44fe177eaa64.webp\" alt=\"Codex初体验 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2098\" height=\"1185\"></p>\n<p>真是出师不利啊<br>\n<img src=\"/explore/assets/737c57b30e1b306e7a3e427b.webp\" alt=\"Codex初体验 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"1922\" height=\"1232\"></p>\n<p>你是谁，思考了一分钟<br>\n<img src=\"/explore/assets/0c5c44240645388c510ba572.webp\" alt=\"Codex初体验 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"1922\" height=\"1232\"></p>\n<p id=\"section-2\">2026/6/6<br>\n上次下完codex之后没咋用就卸载了，这次冲了plus会员，再来好好体验体验。</p>\n<p>这次我依旧遇到了五次重新连接的问题，但是只有第一句对话这样，后面就正常了。<br>\n<img src=\"/explore/assets/edd9f63c387873dec8944a5c.webp\" alt=\"Codex初体验 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"><br>\n这一个简单的任务处理三分钟，也太der了。后面我把思考等级改成了低，瞬间感觉回复速度上来了。</p>\n<p>感觉codex的界面还是很顺眼的，暂时没有发现比claudecode强在哪儿，感觉它能干的cc也能干啊。<br>\n<img src=\"/explore/assets/0c8fdc8f54db00fc79d28904.webp\" alt=\"Codex初体验 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>哈哈哈，依旧离不开的成功日记。<br>\n<img src=\"/explore/assets/fb2fade88ed33a6ee783bdbf.webp\" alt=\"Codex初体验 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>类似于claude的computer use功能吗？<br>\n<img src=\"/explore/assets/619a7dfdb5d9deab2bf7370d.webp\" alt=\"Codex初体验 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>这不是耍小聪明吗，我就想考验一下你的控制能力<br>\n<img src=\"/explore/assets/86fe2b4421e6d99a11ff3ee6.webp\" alt=\"Codex初体验 · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>卧槽，效果真tm好，还有具体图层，牛逼。<br>\n<img src=\"/explore/assets/679d284a424c5ec6930ec96d.webp\" alt=\"Codex初体验 · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"><br>\n<img src=\"/explore/assets/31f941ae7b19b97192e204e4.webp\" alt=\"Codex初体验 · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>这里我又新开了一个对话，又是这烦人的五次重新连接<br>\n<img src=\"/explore/assets/9199b28dd9b7a65799567024.webp\" alt=\"Codex初体验 · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"1574\" height=\"437\"></p>\n<p>经我我的多次尝试，computer use功能就是无法正常启动<br>\n<img src=\"/explore/assets/732eaa05615f46c5bb3a3bd1.webp\" alt=\"Codex初体验 · 步骤截图 16\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>后面它自己修了有十多分钟，终于是修好了。<br>\n<img src=\"/explore/assets/aaa6ae741eb962f47344ae78.webp\" alt=\"Codex初体验 · 步骤截图 17\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>看看成品吧。反正能干是能干，但是延迟是真tm的大，基本上在一个页面得停顿很久，才会进行下一步。所以这个实现结果和github上那个几百星的项目应该是一样的，这个延迟没有人能接受的。<br>\n<img src=\"/explore/assets/bc076cd09d4306c25ee21ab9.webp\" alt=\"Codex初体验 · 步骤截图 18\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1527\"></p>\n<p>这是屏幕控制功能启动中的样子<br>\n<img src=\"/explore/assets/7585b1040f26d4081a176c48.jpg\" alt=\"Codex初体验 · 步骤截图 19\" loading=\"lazy\" decoding=\"async\" width=\"3946\" height=\"2904\"></p>\n<p>这是codex给我画的小猫。。。<br>\n<img src=\"/explore/assets/25bbd245b4571a1da0d822b3.webp\" alt=\"Codex初体验 · 步骤截图 20\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"><br>\n<img src=\"/explore/assets/d24a1d9aad63ae542f54cb34.webp\" alt=\"Codex初体验 · 步骤截图 21\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "2026/5/13"
+      },
+      {
+        "id": "section-2",
+        "text": "2026/6/6"
+      }
+    ]
+  },
+  {
+    "slug": "fnos-first-experience",
+    "title": "飞牛OS初体验",
+    "category": "自托管实践",
+    "date": "2026-05-13",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 4,
+    "html": "<p>今天心血来潮想用自己电脑当一个服务器，然后通过内网穿透部署我的个人网站。<br>\n最开始是想买一个便宜服务器当NAS的，AI给我推荐的方案是Windows + 虚拟机 + 飞牛OS(不过我现在都不知道为什么不直接拿电脑本身的系统整)。</p>\n<p id=\"section-1\">第一步去飞牛官网下载iso镜像文件。<br>\n<a href=\"https://www.fnnas.com\" rel=\"nofollow\" target=\"_blank\">https://www.fnnas.com</a></p>\n<p id=\"section-2\">第二步打开VMware，新建虚拟机，系统选择“Other Linux 5.x kernel 64-bit”（fnOS基于Linux内核）</p>\n<p><img src=\"/explore/assets/42dd80bb425d5d53edfad269.webp\" alt=\"飞牛OS初体验 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"1280\" height=\"800\"></p>\n<p>系统安装好之后，给我自动开放了一个端口，这样就能直接在本地浏览器访问这个系统了。<br>\n<img src=\"/explore/assets/b2e91fe58c3e3108f29327e2.webp\" alt=\"飞牛OS初体验 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1280\" height=\"800\"><br>\n<img src=\"/explore/assets/4b646e684213a416d0a06e4d.webp\" alt=\"飞牛OS初体验 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1403\"></p>\n<p>这两边好像是对应的。<br>\n<img src=\"/explore/assets/cd74bab7ab30e87c69979374.webp\" alt=\"飞牛OS初体验 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1528\"></p>\n<p>这里遇到了第一个问题，由于我给虚拟机分配的存储太小了，导致创建不了存储空 间。<br>\n<img src=\"/explore/assets/8df427a76d4be0403a35fb86.webp\" alt=\"飞牛OS初体验 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1408\"></p>\n<p>然后我就开始研究内网穿透了，毕竟最后得把内容映射到公网， 不然别人访问不了。<br>\n<img src=\"/explore/assets/da6d042ae42c487a627a2064.webp\" alt=\"飞牛OS初体验 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2527\" height=\"1405\"><br>\n<img src=\"/explore/assets/be752647cd2e6b832cb98087.webp\" alt=\"飞牛OS初体验 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"2530\" height=\"1408\"></p>\n<p>整个过程其实也是很简单，这是我第一次内网穿透成功。<br>\n<img src=\"/explore/assets/3ddb76e068a1bba5821f05c2.webp\" alt=\"飞牛OS初体验 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1520\"><br>\n<img src=\"/explore/assets/b296e2660bea87d5428abb17.jpg\" alt=\"飞牛OS初体验 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "第一步去飞牛官网下载iso镜像文件。"
+      },
+      {
+        "id": "section-2",
+        "text": "第二步打开VMware，新建虚拟机，系统选择“Other Linux 5.x kernel 64-bit”（fnOS基于Linux内核）"
+      }
+    ]
+  },
+  {
+    "slug": "sillytavern-first-experience",
+    "title": "AI酒馆——SillyTavern",
+    "category": "AI 应用",
+    "date": "2026-05-10",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 4,
+    "html": "<p>酒馆就是把ai灌醉，打破限制，从而干一些正常ai做不到的事。</p>\n<p>这个ai酒馆已经出了好久了，正好最近deepseek api大降价，来体验体验。</p>\n<p>由于这个项目不能直接下载，需要用gitclone部署到本地，所以我一开始是尝试用电脑下载的，但不知道为什么，当时速度特别慢，于是我就去手机上下载了。</p>\n<p>由于手机上没有终端，所以需要下载一个开源的终端软件——Termux<br>\n<img src=\"/explore/assets/5bd483c5410b3b0868ccce42.webp\" alt=\"AI酒馆——SillyTavern · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"2533\" height=\"1403\"></p>\n<p>剩下其他的就和电脑上的终端一样了，复制命令然后粘贴，部署完成后，安装相关依赖，然后启动就可以了。<br>\n当然过程并非一帆风顺，我在使用npm安装相关依赖的时候，一直卡在加载页面，最后等了十多分钟才下载好。<br>\n<img src=\"/explore/assets/401b73ce8027d39f8896c939.webp\" alt=\"AI酒馆——SillyTavern · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"3660\" height=\"2712\"></p>\n<p>之后打开浏览器访问，设置好API连接就可以正常聊天了，它默认给了一个英文的角色卡<br>\n<img src=\"/explore/assets/e2360ee390780bfb9afa6f3a.webp\" alt=\"AI酒馆——SillyTavern · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"2440\" height=\"2712\"></p>\n<p>这里还遇到一个sb问题，Deepseek移动网页端无法创建api，得亏老子聪明，知道可以用桌面模式，果然得多学知识啊，灵活面对各种问题<br>\n<img src=\"/explore/assets/050dcbd33d41563c31453ec4.webp\" alt=\"AI酒馆——SillyTavern · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>最后一个最严重的问题，就是手机端在使用起来总感觉有的时候会卡，点击交互键之后会没有反应。我以为是我手机的问题，每次都重新启动终端。结果后面我才发现，每次交互的时候把后台切到终端，等终端进程动了的时候再切回去就行了。这也是为什么我下面给角色卡发了三条消息才回我。<br>\n<img src=\"/explore/assets/ad8408a079bc1be3fb411e34.webp\" alt=\"AI酒馆——SillyTavern · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>由于我无法在类脑社区里面下载角色卡，于是我就去pdd买了一个打包好的角色卡包。最后展示一下成果：<br>\n<img src=\"/explore/assets/f59dd0aff5e1cd7db89f0adb.jpg\" alt=\"AI酒馆——SillyTavern · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2440\" height=\"2712\"></p>\n",
+    "toc": []
+  },
+  {
+    "title": "骑车先学会刹车：车感与路感",
+    "category": "骑行技巧",
+    "date": "2026-04-05",
+    "minutes": 2,
+    "html": "<p><strong>骑车首先要学会刹车</strong><br />\n刹车是对自己和别人的一个保护。你必须对自己的刹车的制动距离有一个非常精确的把控，然后你要随时做好捏刹车的准备，做好眼前突然出现一个人的准备。如果刹不好车，就一定会出现撞到别人的情况，不是会蹬脚踏就能上路了，而是你得会刹车，会应对突发情况。<br />\n我真的在学校里见过太多撞到别人的人了，我一般看见骑起来不稳当的人骑车都会下意识保持几个身位的距离。先学好怎么刹车再上路好吗？<br />\n对刹车的把控其实就是车感的一部分，聊完车感我们再聊路感。我理解的路感就是对其他行人运动轨迹的预测。想提高路感，一个是需要多骑多经历，再者就是需要训练，也就是在脑海里预测对方会怎么走，然后再和他真正的行动方位进行一个核对，等预判多了，路感自然就来了。在路感里最重要的我觉得就是对视野盲区的预判，无论是建筑物也好，其他车辆也好，只要你的视野被遮挡住了，你就必须默认这个地方一定会有人出现，做好急刹的准备。甚至有时候我们不能完全相信我们的眼睛，因为除了静态的盲区之外还会有动态的盲区，就比如一个行人被你面前行驶的车辆遮住了，而恰好他们的速度还一致，你一直发现不了被遮住的人，这时候你要是贴着车辆屁股走，甚至你会和车后面的行人来个大拥抱，真的很危险，所以必须要做好任何情况的风险预测。</p>\n",
+    "slug": "diary-103",
+    "endDate": "",
+    "toc": []
+  },
+  {
     "slug": "openclaw-and-hermes",
     "title": "OpenClaw & Hermes",
     "category": "智能体实践",
     "date": "2026-02-10",
     "endDate": "2026-05-19",
     "status": "已完成",
-    "minutes": 2,
+    "minutes": 8,
     "html": "<p id=\"section-1\">2026/2/10<br>\n虚拟机+Archlinux</p>\n<p id=\"section-2\">第一步安装 Node.js 22+</p>\n<pre><code>$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash\n$ source ~/.bashrc\n$ nvm install 22\n</code></pre>\n<p id=\"section-3\">第二步安装git</p>\n<pre><code>$ sudo pacman -S git\n</code></pre>\n<p id=\"section-4\">第三步安装Openclaw(==用海外节点加速，否则会安装失败==)</p>\n<pre><code>$ curl -fsSL https://openclaw.ai/install.sh | bash\n</code></pre>\n<p>跟着步骤一步步来就行，但是由于全是英文，我根本看不懂，也不知道该怎么选，稀里糊涂的就过来了<br>\n<img src=\"/explore/assets/d1ec98605c05d855421da7d2.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"2358\" height=\"1360\"></p>\n<p>这是今天的最终成果，整了半天，实在连接不上飞书<br>\n<img src=\"/explore/assets/d91481f532f4c078ceb3ad8f.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1280\" height=\"800\"></p>\n<p id=\"section-5\">2026/4/19——续<br>\nOpenclaw已经爆火这么久了，但是我迟迟没有体验，有两个原因吧：<br>\n1.它本身就不够成熟，属于是一个银样镴枪头，中看不中用<br>\n2.太费token了，我没钱养它</p>\n<p>现在龙虾的热度已经过去了，我再接着来折腾吧，这次我的目标是能跑起来就行</p>\n<p id=\"section-6\">2026/5/17——再续<br>\n上次忘了折腾了，今天势必拿下。看了罗福莉的访谈之后想安OpenClaw的欲望达到了顶峰。</p>\n<p>代理也开了，就是不知道为什么，用官网上的指令下载总是卡住<br>\n<img src=\"/explore/assets/0ba88e7ae63881598b82d97f.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>最后用的pnpm终于成功了<br>\n<img src=\"/explore/assets/0a5dd9c06cf2947b619f4b02.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>久违了，控制面板<br>\n<img src=\"/explore/assets/4089d99d38b80de9d71d2af0.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>配置好Deepseek的API之后，开启了我和龙虾的第一句话<br>\n<img src=\"/explore/assets/371add45ce043c20c7bcc47b.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>接着连接QQ<br>\n<img src=\"/explore/assets/58de83ad798d8a8e7415e702.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>成功配置<br>\n<img src=\"/explore/assets/efd5fdb6421db64f8386f681.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>第一个报错，解决办法是重新配置了一下config文件<br>\n<img src=\"/explore/assets/6ed4dc0ca1e4fdd239d3849c.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/1d83ce0bcbb1751e755710d1.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/ad9cda49a022f250a8f11111.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/927baf29efa03aa2c6ed0f64.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/0231fc832cf9c185ea83a8f1.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"><br>\n<img src=\"/explore/assets/d42888f6db25ce0f4c1c155b.jpg\" alt=\"OpenClaw &amp; Hermes · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"3660\" height=\"2712\"></p>\n<p>总结一下使用感受：鸡肋，没有实际应用场景</p>\n<p id=\"section-7\">隔天趁着热乎劲，又来折腾一下Hermes：<br>\n这次我直接用的官方安装命令，之前一直觉得太慢，后面我发现，只要开TUN就行了。<br>\n依旧配置Deepseek的API，10块钱的余额我都用两年多了都没用完。<br>\n<img src=\"/explore/assets/c1a6429b9808fa76a4c5d765.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>这里安装完之后，直接输入hermes命令还没有反应。<br>\n需要用下面这个代码重新加载shell：<code>source ~/.bashrc</code><br>\n<img src=\"/explore/assets/fb41b18d290d421e9c295402.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 16\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>OK呀，也是成功进入Hermes了。<br>\n<img src=\"/explore/assets/9d005904c8550e58af91c0bc.webp\" alt=\"OpenClaw &amp; Hermes · 步骤截图 17\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1599\"></p>\n<p>在配置qq bot的时候我遇到了一个问题，就是每次配置的时候总是跳过，我明明记得我是选中了qq bot的，结果我问了ai发现，还需要用空格进行选中的。ai真的越来越聪明了。<br>\n<img src=\"/explore/assets/87c14817056ea873c250a362.jpg\" alt=\"OpenClaw &amp; Hermes · 步骤截图 18\" loading=\"lazy\" decoding=\"async\" width=\"3660\" height=\"2712\"></p>\n",
     "toc": [
       {
@@ -90,5 +191,93 @@
         "text": "隔天趁着热乎劲，又来折腾一下Hermes："
       }
     ]
+  },
+  {
+    "slug": "xyz-domain-purchase",
+    "title": "一级域名购买.xyz",
+    "category": "自托管实践",
+    "date": "2026-02-04",
+    "endDate": "2026-05-10",
+    "status": "已完成",
+    "minutes": 5,
+    "html": "<p>今天想开代理,结果发现节点延迟突然变成-1了,想登录3x-ui面板查看一下,发现居然超时<br>\n<img src=\"/explore/assets/a80bc265cf13dd38fe607d93.webp\" alt=\"一级域名购买.xyz · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1523\"></p>\n<p>用域名登录显示这个<br>\n<img src=\"/explore/assets/e6cdead78533c32d58f3c4fd.webp\" alt=\"一级域名购买.xyz · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1519\"></p>\n<p>但是ping了一下ip发现没被墙啊,然后我去问了ai,ai说要么是cloudflare那边dns解析有问题,要么是域名有问题,cf当然不可能出问题,于是我赶紧去看看域名,果不其然,免费域名果然不靠谱啊<br>\n<img src=\"/explore/assets/9124fa5c5531f0794bcb2d68.webp\" alt=\"一级域名购买.xyz · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1920\" height=\"1045\"></p>\n<p>索性,下单了之前看上的520****.xyz<img src=\"/explore/assets/8ae94c33479e4c512096420b.webp\" alt=\"一级域名购买.xyz · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1528\"></p>\n<p>设置了一个密钥,然后这是恢复码<br>\n<img src=\"/explore/assets/ea178d0c066b9e2dcd83c58e.webp\" alt=\"一级域名购买.xyz · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2559\" height=\"1401\"></p>\n<p>域名到账后第一件事当然是来换上我们cloudflare的dns服务😋<br>\n<img src=\"/explore/assets/d67b914cc2b5394b6adbd661.webp\" alt=\"一级域名购买.xyz · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1403\"></p>\n<p>然后来到域名服务商官网更换一下名称服务器<br>\n<img src=\"/explore/assets/07a852f51f58c972ddfb0dbb.webp\" alt=\"一级域名购买.xyz · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1403\"><br>\n<img src=\"/explore/assets/ea4decd222d321310a8840de.webp\" alt=\"一级域名购买.xyz · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1526\"></p>\n<p>由于是第一次用顶级域名,我都不知道还得等这么久传播,免费的二级域名几秒就配置完成了<br>\n<img src=\"/explore/assets/9de748909edb0cad1379a9d5.webp\" alt=\"一级域名购买.xyz · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1403\"><br>\n<img src=\"/explore/assets/feca9f682f8f82374740d9c5.webp\" alt=\"一级域名购买.xyz · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2549\" height=\"1403\"></p>\n<p>爽了，万能的cloudflare<br>\n<img src=\"/explore/assets/76869b38ad0077d414b58e0e.webp\" alt=\"一级域名购买.xyz · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1408\"></p>\n<p>然后我用cloudflare搞了个域名邮箱，这样就不会泄露真实邮箱了，虽然并没有什么用吧<br>\n<img src=\"/explore/assets/30642c2aa4b332b3d3514787.webp\" alt=\"一级域名购买.xyz · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"2440\" height=\"2712\"></p>\n",
+    "toc": []
+  },
+  {
+    "title": "二手iPhone的选购记录与到手体验",
+    "category": "数码体验",
+    "date": "2026-01-21",
+    "minutes": 2,
+    "html": "<p>二手苹果手机的一些坑：</p>\n<p>1.隐藏id：风险最大，原主人有找回的可能。通过技术手段绕过id，一旦将手机还原或刷机，将会进入锁定界面<br>\n2.有锁（运行商锁）：又称运营商定制版（与之区别的是公开版，如国行、美版、港澳台版）指定运营商手机卡，否则无法激活sim卡，需要卡贴（一种破解手段）才能正常使用。<br>\n3.组装机：非原装屏容易死机，需要强制重启，原装屏幕支持原彩显示；非原装电池看不了电池健康度<br>\n4.没面容：重摔或泡水<br>\n5.外版：水比较深，来路可能有问题。但相对的，国行是阉割版的，比如无法接入chatgpt<br>\n6.资源机：被退换过，修好再次出售，序列号已被注销<br>\n只拿来拍照，玩游戏的话，wifi机+隐藏id+组装机，这些情况通通不需要考虑，可以以极低的价格拿下</p>\n<img src=\"/explore/assets/5c6ee07cd79a43b6338396d0.jpg\" alt=\"二手iPhone的选购记录与到手体验 · 配图 1\" width=\"3072\" height=\"2048\" loading=\"lazy\" decoding=\"async\">\n<video controls playsinline=\"\" preload=\"metadata\" width=\"1080\" height=\"1920\" src=\"/explore/assets/e1c073e42aad1c26214c2425.mp4\" poster=\"/explore/assets/8678da1f669795d34cf97efc.webp\" data-duration=\"3.343667\" aria-label=\"二手iPhone的选购记录与到手体验\">您的浏览器不支持视频播放。</video>\n<p>实际二手苹果x到手初体验，由于是17年出的机子，到现在已经八九年了，首先映入眼帘的是那充满灰尘的扬声器，md陈年老垢，特别黄，一眼就看出来放了很久了。打开屏幕，结果发现轻划打不开，必须得划到顶才行，显得很不舒服。然后屏幕的话，感觉画面非常干净清晰，像新的一样，但是系统很卡，真的是卡卡的，只是移动一两下不明显，一旦操作多了就会突然卡一下，但是最最令人无法接受的当然是“硬病”，别的小毛病都能接受，但是一遇到系统弹窗就卡死，无法进行操作真的接受不了，这完全没法正常使用</p>\n",
+    "slug": "diary-061",
+    "endDate": "",
+    "toc": []
+  },
+  {
+    "slug": "crypto-first-experience",
+    "title": "虚拟币初体验",
+    "category": "数字资产",
+    "date": "2026-01-11",
+    "endDate": "2026-01-17",
+    "status": "已完成",
+    "minutes": 9,
+    "html": "<p>首先注册了一个欧易账号，大陆居然能用，挺奇怪的<br>\n<img src=\"/explore/assets/0c994b561b3b828f8589823d.webp\" alt=\"虚拟币初体验 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>然后买了100USTD<img src=\"/explore/assets/b1c03ef04d869a3e4b6382c8.webp\" alt=\"虚拟币初体验 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n支付<br>\n<img src=\"/explore/assets/525b71dea6a60040ce50f79e.webp\" alt=\"虚拟币初体验 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/8ff0d2d2a7e6558494323c9f.webp\" alt=\"虚拟币初体验 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>U币到账了<br>\n<img src=\"/explore/assets/548f09748e6bfb898dc4291e.webp\" alt=\"虚拟币初体验 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>新人有个保护三天<br>\n<img src=\"/explore/assets/6fcbb38213b223971943a05e.webp\" alt=\"虚拟币初体验 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>完成欧易的新人任务<br>\n（买卖现货）<br>\n<img src=\"/explore/assets/55583b38a31e9c7d883b0812.webp\" alt=\"虚拟币初体验 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>这里不知道为什么多了0.00001123比特币<br>\n<img src=\"/explore/assets/869aa150e525760222f2e089.webp\" alt=\"虚拟币初体验 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>活动卡券已到账<img src=\"/explore/assets/dbce37920caae72fe2bf9f28.webp\" alt=\"虚拟币初体验 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>现在的账户<img src=\"/explore/assets/18aadf5247267b958eaf0ada.webp\" alt=\"虚拟币初体验 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/d89a80b6c1f8c00226b829d9.webp\" alt=\"虚拟币初体验 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/869aa150e525760222f2e089.webp\" alt=\"虚拟币初体验 · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>然后用这个卡券新建了一个策略，类似于量化交易吧<img src=\"/explore/assets/bbf08270ea126dd5c384fa5d.webp\" alt=\"虚拟币初体验 · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>这里有个拉新活动，这哥们拉了一堆人一分钱没捞到<img src=\"/explore/assets/7e704097737e26fc84345253.webp\" alt=\"虚拟币初体验 · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/a46baa2f8a9597a4874f3f98.webp\" alt=\"虚拟币初体验 · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p><img src=\"/explore/assets/95d7cb271c4479552203e8fd.webp\" alt=\"虚拟币初体验 · 步骤截图 16\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>冷静期一过,我立刻把币给卖了,700块钱买的,到手就696.7了,不过也就亏了这两三块钱还能接受<br>\n<img src=\"/explore/assets/da2a3cfabc97e5e5d1e39497.webp\" alt=\"虚拟币初体验 · 步骤截图 17\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/954fbd29b26ef522f8338d33.webp\" alt=\"虚拟币初体验 · 步骤截图 18\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>今天是26.1.17</p>\n<p><img src=\"/explore/assets/59c871e36cb549f359ced0b2.webp\" alt=\"虚拟币初体验 · 步骤截图 19\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/c2498951822d3225305832bd.webp\" alt=\"虚拟币初体验 · 步骤截图 20\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n然后我给它停了,到手了7.38u<br>\n<img src=\"/explore/assets/77d2e8ef14567b48e832d524.webp\" alt=\"虚拟币初体验 · 步骤截图 21\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><img src=\"/explore/assets/dac729c6710f90a9e4000f0e.webp\" alt=\"虚拟币初体验 · 步骤截图 22\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p>卖了50块钱,白嫖了50,还多给我转了3分<br>\n<img src=\"/explore/assets/54b7c6bd959f6a16ff169968.webp\" alt=\"虚拟币初体验 · 步骤截图 23\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n<p><img src=\"/explore/assets/8478b5bd20e590cbcc592ef6.webp\" alt=\"虚拟币初体验 · 步骤截图 24\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"><br>\n<img src=\"/explore/assets/3fbe0358f7f9fd8b08b4291d.webp\" alt=\"虚拟币初体验 · 步骤截图 25\" loading=\"lazy\" decoding=\"async\" width=\"1220\" height=\"2712\"></p>\n",
+    "toc": []
+  },
+  {
+    "slug": "arch-linux-installation",
+    "title": "Arch Linux安装过程",
+    "category": "系统安装",
+    "date": "2025-12-21",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 4,
+    "html": "<p><a href=\"https://www.cnblogs.com/Thato/p/18311683\" rel=\"nofollow\" target=\"_blank\">ArchLinux Vmware安装指北</a></p>\n<p id=\"section-1\">第一步下载系统的iso文件</p>\n<p id=\"section-2\">第二步新建虚拟机，选好iso位置</p>\n<p>进来之后没有系统，只有一个黑框<br>\n<img src=\"/explore/assets/7570934611ad6bee9db29a19.webp\" alt=\"Arch Linux安装过程 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"732\" height=\"405\"></p>\n<p>这时候只需要三个操作：<br>\n1，ping <a href=\"http://baidu.com\" rel=\"nofollow\" target=\"_blank\">baidu.com</a> 看看有没有网<br>\n2，passwd 因为一会需要用宿主机ssh连接<br>\n3，ip addr 查看虚拟机ip</p>\n<p>操作完之后直接用宿主机的cmd的ssh连接，因为可以复制代码</p>\n<p>连接完ssh之后，就跟着教程操作就行了，最好是多用手敲敲代码，因为你不敲代码，你就不知道你的打字水平有多差，我一开始输入的命令，十个得有五个错误的，基本上都是手误，比如etc打成ect，btrfs打成brtfs。。。真的需要这么个熟悉代码的过程，毕竟看得多了眼睛也会尖，有时候一眼就能看出来哪里错了</p>\n<p>操作ing，后面需要跟着教程配置一堆东西，什么Network Manager啊，设置时区啊，分盘啊，挂载啊<br>\n<img src=\"/explore/assets/537c9c193512a50933a284b7.webp\" alt=\"Arch Linux安装过程 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>这里遇到了一个问题，因为镜像源配置错了，所有下载速度特别特别慢，然后这时候我问了ai，用ctrl+c取消了下载，然后再回到镜像源配置界面重新配置了一次<br>\n<img src=\"/explore/assets/ac3845e054268a0f93a27635.webp\" alt=\"Arch Linux安装过程 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1526\"><br>\n<img src=\"/explore/assets/728bd879128a420da5c2b68d.webp\" alt=\"Arch Linux安装过程 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1524\"></p>\n<p>经过我的不懈努力之下，终于安装完了arch linux，但是这才刚刚开始，因为现在还没有桌面系统<br>\n<img src=\"/explore/assets/cbec94d28e071f5f1767a73d.webp\" alt=\"Arch Linux安装过程 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>这里我想安装deepin的桌面，但是很可惜一直报错，即使是gemini也束手无策<br>\n<img src=\"/explore/assets/6923ee61e384c8245417f0f0.webp\" alt=\"Arch Linux安装过程 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>目前的未解之谜<br>\n<img src=\"/explore/assets/5fe074f74e3434bec0063be3.webp\" alt=\"Arch Linux安装过程 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"803\" height=\"111\"></p>\n<p>接着我换了一个桌面，这次我选择了KDE，终于也是成功了<br>\n<img src=\"/explore/assets/bfd935891b7ff4156ba802c0.webp\" alt=\"Arch Linux安装过程 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"><br>\n<img src=\"/explore/assets/a3ab6f584f163109e1359c90.webp\" alt=\"Arch Linux安装过程 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"1276\" height=\"796\"></p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "第一步下载系统的iso文件"
+      },
+      {
+        "id": "section-2",
+        "text": "第二步新建虚拟机，选好iso位置"
+      }
+    ]
+  },
+  {
+    "slug": "vmware-and-macos",
+    "title": "VMware虚拟机研究及黑苹果系统",
+    "category": "系统安装",
+    "date": "2025-12-16",
+    "endDate": "",
+    "status": "已完成",
+    "minutes": 6,
+    "html": "<p>主机系统：win11</p>\n<p>分屏研究教程<br>\n<img src=\"/explore/assets/63c99dc27c1afe87b9697cf0.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 1\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1528\"></p>\n<p id=\"section-1\">第一步，检查虚拟化<br>\n<img src=\"/explore/assets/335729f4a8644f23181c1571.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 2\" loading=\"lazy\" decoding=\"async\" width=\"1643\" height=\"1070\"></p>\n<p>后面即使关闭了Hyperv相关服务，依旧不支持虚拟化的Intel VT-x/EPT<br>\n<img src=\"/explore/assets/1ce3dd55a22b1efb0b0a65d7.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 3\" loading=\"lazy\" decoding=\"async\" width=\"1928\" height=\"1122\"></p>\n<p>后来在评论区看见有人说，win11需要关闭内存完整性<br>\n<img src=\"/explore/assets/5defb92b9d3cea9f938cf584.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 4\" loading=\"lazy\" decoding=\"async\" width=\"2533\" height=\"1393\"></p>\n<p>最后也是意料之内的成功了<br>\n<img src=\"/explore/assets/517017db8ccb65ec029eab40.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 5\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n<p>第二天，我们来研究macOS</p>\n<p>在网上找了半天mac的镜像包，好不容易下载完了之后，发现没有mac的选项，然后我去问了ai<br>\n<img src=\"/explore/assets/67e08b9f6d29bc5165c5389d.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 6\" loading=\"lazy\" decoding=\"async\" width=\"733\" height=\"874\"></p>\n<p><img src=\"/explore/assets/587da130b27472df2f397471.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 7\" loading=\"lazy\" decoding=\"async\" width=\"1313\" height=\"1140\"></p>\n<p>还真让ai给说对了，我用解锁器解锁之后真的有mac系统了<br>\n<img src=\"/explore/assets/702c33e71948431bec43b515.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 8\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1468\"><br>\n<img src=\"/explore/assets/82274c3c20bedc94e04aefd6.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 9\" loading=\"lazy\" decoding=\"async\" width=\"727\" height=\"678\"></p>\n<p>哈哈哈哈爽了<br>\n<img src=\"/explore/assets/fd593ca4b48bde03ca106317.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 10\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1529\"></p>\n<p>再遇难题<br>\n<img src=\"/explore/assets/ea2dfdba087061cf5bb355f4.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 11\" loading=\"lazy\" decoding=\"async\" width=\"1406\" height=\"889\"></p>\n<p>ai再立大功<br>\n<img src=\"/explore/assets/f55660a2e6b0a2d19d538a1e.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 12\" loading=\"lazy\" decoding=\"async\" width=\"1223\" height=\"1158\"><br>\n<img src=\"/explore/assets/b2207461dd1ed8c742c7fa99.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 13\" loading=\"lazy\" decoding=\"async\" width=\"1341\" height=\"879\"></p>\n<p>下面安装提示安装VMware Tools<br>\n<img src=\"/explore/assets/3256b078aaa879b52e0cd9d1.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 14\" loading=\"lazy\" decoding=\"async\" width=\"1213\" height=\"897\"></p>\n<p>那么至此，成功拿下mac系统<br>\n<img src=\"/explore/assets/3c575dd4d736fdc791732e04.webp\" alt=\"VMware虚拟机研究及黑苹果系统 · 步骤截图 15\" loading=\"lazy\" decoding=\"async\" width=\"2560\" height=\"1600\"></p>\n",
+    "toc": [
+      {
+        "id": "section-1",
+        "text": "第一步，检查虚拟化"
+      }
+    ]
+  },
+  {
+    "title": "第一次搭建并部署个人博客",
+    "category": "自托管实践",
+    "date": "2025-02-28",
+    "minutes": 2,
+    "html": "<p>博客进度：<br>\n首先通过网络上学习，明白了搭建博客首先需要一个框架，主流框架有hexo、vuepress、notion next（别的暂时还不知道），接着需要把用框架写的内容存放在一个地方，最简单免费的方法就是用github仓库，当然缺点就是需要去更新维护，如果放到数据桶里的话就可以直接对数据进行操作了（但是得花钱买）。最后需要服务器部署以及域名，当然，目前免费的都是国外的服务器（已知的有cloudfare pages、github pages、netlify、vercel），所以国内用户访问可能会直接被拦截，或者访问速度非常慢，而解决办法呢，就是去购买国内的服务器部署或者购买国内的域名，缺点就是得花钱并且进行备案。<br>\n目前呢已经通过netlify成功部署了，跟预想的不一样，国内其实是能访问的，但是速度一言难尽。接下来的任务就是找出自己最心仪的主题，然后把小号朋友圈的一些破烂往上面誊誊，开始写自己的博客了。</p>\n<img src=\"/explore/assets/55a435646ef4445290aa67cc.jpg\" alt=\"第一次搭建并部署个人博客 · 配图 1\" width=\"1440\" height=\"1080\" loading=\"lazy\" decoding=\"async\">\n<img src=\"/explore/assets/35779bc0131f24bd6ab993ab.jpg\" alt=\"第一次搭建并部署个人博客 · 配图 2\" width=\"1440\" height=\"1080\" loading=\"lazy\" decoding=\"async\">\n",
+    "slug": "diary-031",
+    "endDate": "",
+    "toc": []
+  },
+  {
+    "title": "用Photoshop魔棒工具处理阴影",
+    "category": "图像处理",
+    "date": "2024-01-30",
+    "minutes": 3,
+    "html": "<p>我曾经最不屑一顾的魔棒工具，居然起到了意想不到的结果，我深刻意识到了理解一个工具的工作原理的重要性，果然工具没有最好用的，只有针对某一特定情况最适用的<br>\n所以以后最好还是了解某一个工具背后的原理以后再尝试去运用它，就像在生活中，领导给下级布置任务一样，并不是每个任务每个人都能胜任的。很多时候都是效率决定一切的</p>\n<img src=\"/explore/assets/6f8dc182da02ed6a6ce75e9b.jpg\" alt=\"用Photoshop魔棒工具处理阴影 · 配图 1\" width=\"1482\" height=\"1080\" loading=\"lazy\" decoding=\"async\">\n<img src=\"/explore/assets/28d896555baba7aae19de32c.jpg\" alt=\"用Photoshop魔棒工具处理阴影 · 配图 2\" width=\"1809\" height=\"1080\" loading=\"lazy\" decoding=\"async\">\n<p>ok我再来简单复盘一下。<br>\n​首先这个图简单在有能直接吸取的正确颜色，并且区域颜色非常单一，整体来说并不复杂。需要处理的可以拆分成这几块：耳朵阴影，面部阴影，调亮五官和面部被压暗的轮廓。<br>\n​由于阴影部分颜色单一，直接选用魔棒工具最为方便，接着只需要扩大一点点选区，填充一下颜色就处理好了，于是耳朵和面部我们就解决了。接下来是颜色提亮，可以直接使用色阶，点开之后会发现阴影部分高光为0，直接把滑块向左调节即可。然后是面部轮廓，直接提高亮度还不够，会导致其泛白，这时候只要提高一下对比度即可，最后再处理一下细节就ok了。<br>\n色阶那块表述的有点问题，暂时想不出来怎么说。然后我想说的是，ps是个精细活，工具很多，组合多样，只有多积累经验才能更快找到最优解</p>\n<img src=\"/explore/assets/ae4cfcccb67cdc10ab4f57bb.jpg\" alt=\"用Photoshop魔棒工具处理阴影 · 配图 3\" width=\"1080\" height=\"1070\" loading=\"lazy\" decoding=\"async\">\n<img src=\"/explore/assets/9d7682584355ec726e0bb81a.png\" alt=\"用Photoshop魔棒工具处理阴影 · 配图 4\" width=\"1728\" height=\"1080\" loading=\"lazy\" decoding=\"async\">\n",
+    "slug": "diary-012",
+    "endDate": "",
+    "toc": []
   }
 ]
