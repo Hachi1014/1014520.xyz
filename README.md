@@ -15,7 +15,7 @@ npm run build
 npm run check
 ```
 
-构建校验已有图片，内容一致时直接复用；图片缺失或损坏时，从 `content/blog/media-parts` 和 `content/explore/media-parts` 还原。完整图片不重复提交，原始知识库不属于本仓库。
+`public/` 中的完整图片随源码提交，与本地网站资源保持一致。构建会校验博客、探索、想法和日常的图片；缺失或损坏时，从对应 `content/<板块>/media-parts` 还原。原始知识库不属于本仓库。
 
 ## 内容与交互
 

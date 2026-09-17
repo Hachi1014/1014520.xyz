@@ -37,9 +37,6 @@ next-env.d.ts
 /outputs/
 /work/
 
-# Blog media is reconstructed from verified source chunks.
-/public/blog/assets/
-/public/explore/assets/
 
 # Local analysis and credentials
 __pycache__/
@@ -49,6 +46,4 @@ __pycache__/
 *.p12
 *.pfx
 
-/public/thoughts/assets/
 
-/public/daily/assets/
